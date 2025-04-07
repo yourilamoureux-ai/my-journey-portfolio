@@ -1,6 +1,8 @@
 
 # NeonMint Template Documentation
 
+![neonmint](https://github.com/user-attachments/assets/068da5e4-50c0-4134-99d3-8cb8ec867d9f)
+
 ## 🎯 Overview
 
 **NeonMint** is a minimalist and modern template designed for developers and digital creatives. Its dark-toned aesthetic with mint green accents offers a clean, elegant, and functional visual experience, ideal for portfolios, dashboards, or tech landing pages.
