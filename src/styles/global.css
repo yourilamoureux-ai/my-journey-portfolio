@@ -154,12 +154,16 @@ a.inline-block.leading-5.pl-12{
 .markdown strong{
 	@apply font-bold;
 }
-
 .code-block-efe {
 	@apply  w-full rounded-lg h-auto overflow-hidden my-8 ;
 }
-
-
+.copy-code svg{
+	@apply size-5;
+}
+.copy-code{
+	@apply absolute  text-slate-400 text-xs cursor-pointer bg-slate-600/50 border hover:bg-transparent border-slate-500 p-2.5 rounded-md top-4 right-4 flex transition-all duration-300 max-md:opacity-100 min-md:opacity-0 group-hover:opacity-100 items-center justify-center;
+}
+  
 .contains-task-list {
 	@apply space-y-2;
   }	
@@ -191,15 +195,15 @@ a.inline-block.leading-5.pl-12{
   }
   
   .hamburger .bars-icon {
-	display: block;  /* Mostrar icono de 'bars' por defecto */
+	display: block;  /* Show 'bars' icon by default */
   }
   
   .hamburger.active .bars-icon {
-	display: none;  /* Ocultar icono de 'bars' cuando .active está presente */
+	display: none;  /* Hide 'bars' icon when .active is present */
   }
   
   .hamburger.active .xmark-icon {
-	display: block;  /* Mostrar icono de 'xmark' cuando .active está presente */
+	display: block;  /* Show 'xmark' icon when .active is present */
   }
   
 * {
@@ -207,7 +211,7 @@ a.inline-block.leading-5.pl-12{
 }
 
 
-/* estilos de la barra de navegación*/
+/* Navigation bar styles */
 .hamburger {
 
 	cursor: pointer;
@@ -291,11 +295,3 @@ a.inline-block.leading-5.pl-12{
 	filter: blur(10px);
 
 }
-
-.copy-code svg{
-	@apply size-5;
-}
-.copy-code{
-	@apply absolute  text-slate-400 text-xs cursor-pointer bg-slate-600/50 border hover:bg-transparent border-slate-500 p-2.5 rounded-md top-4 right-4 flex transition-all duration-300 max-md:opacity-100 min-md:opacity-0 group-hover:opacity-100 items-center justify-center;
-}
-  
