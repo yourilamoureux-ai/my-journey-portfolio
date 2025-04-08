@@ -63,7 +63,7 @@
 
 ## 🛠️ Technology Stack
 
-- **Framework**: Astro v5.4.2
+- **Framework**: Astro v5.6.1
 - **UI Library**: Preact v10.26.2
 - **Styling**: TailwindCSS v4.0.8
 - **Icons**: astro-icon v1.1.5
