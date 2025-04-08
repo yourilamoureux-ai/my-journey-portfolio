@@ -94,7 +94,7 @@ a.inline-block.leading-5.pl-12{
 	@apply text-2xl font-bold dark:text-white text-blacktext mt-6 mb-4;
 }
 .markdown h4 {
-	@apply text-xl dark:text-white text-blacktext font-bold  mt-16 mb-10;
+	@apply text-xl dark:text-white text-blacktext font-bold  mt-6 mb-4;
 }
 .markdown h5 {
 	@apply text-lg font-bold dark:text-white text-blacktext mt-6 mb-4;
@@ -102,6 +102,7 @@ a.inline-block.leading-5.pl-12{
 .markdown h6 {
 	@apply text-base font-bold dark:text-white text-blacktext mt-6 mb-4;
 }
+
 
 .markdown p {
 	@apply tracking-normal font-montserrat text-pretty text-xl max-md:text-lg text-blacktext dark:text-gray-200 mb-8 leading-8;
@@ -111,8 +112,14 @@ a.inline-block.leading-5.pl-12{
 	@apply text-xl max-md:text-lg font-semibold dark:!text-riptide-300 !text-mint-500 underline hover:!text-riptide-400 transition-all;
 }
 
+.markdown ol{
+	@apply list-decimal;
+}
+.markdown ul{
+	@apply list-disc;
+}
 .markdown ul, .markdown ol{
-	@apply text-xl dark:text-gray-200 text-blacktext  max-md:text-lg list-disc list-inside pl-4 py-6;
+	@apply text-xl dark:text-gray-200 text-blacktext  max-md:text-lg  pl-4 pb-0;
 }
 
 .markdown li {
@@ -140,19 +147,18 @@ a.inline-block.leading-5.pl-12{
 	@apply px-2 py-0.5;
 }
 
-/* .markdown pre {
-	@apply dark:!bg-zinc-900 !bg-slate-900 backdrop-blur-lg mb-8 px-10 pt-12 pb-8  border dark:border-mint-300/10 border-slate-500;
-} */
 .markdown pre {
 	@apply  w-full h-full px-8 py-12   ;
 } 
-.code-block-efe {
-	@apply  w-full rounded-lg h-auto overflow-hidden my-8 ;
-}
 
 .markdown strong{
 	@apply font-bold;
 }
+
+.code-block-efe {
+	@apply  w-full rounded-lg h-auto overflow-hidden my-8 ;
+}
+
 
 .contains-task-list {
 	@apply space-y-2;
@@ -185,15 +191,15 @@ a.inline-block.leading-5.pl-12{
   }
   
   .hamburger .bars-icon {
-	display: block;  /* Show 'bars' icon by default */
+	display: block;  /* Mostrar icono de 'bars' por defecto */
   }
   
   .hamburger.active .bars-icon {
-	display: none;  /* Hide 'bars' icon when .active is present */
+	display: none;  /* Ocultar icono de 'bars' cuando .active está presente */
   }
   
   .hamburger.active .xmark-icon {
-	display: block;  /* Show 'xmark' icon when .active is present */
+	display: block;  /* Mostrar icono de 'xmark' cuando .active está presente */
   }
   
 * {
@@ -201,7 +207,7 @@ a.inline-block.leading-5.pl-12{
 }
 
 
-/* Navigation bar styles */
+/* estilos de la barra de navegación*/
 .hamburger {
 
 	cursor: pointer;
