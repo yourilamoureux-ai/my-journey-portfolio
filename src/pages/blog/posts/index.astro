@@ -1,8 +1,8 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import Hero from "../../components/blog/Hero.astro";
-import Tags from "../../components/blog/Tags.astro";
-import ListPosts from "../../components/blog/ListPosts.astro";
+import Layout from "../../../layouts/Layout.astro";
+import Hero from "../../../components/blog/Hero.astro";
+import Tags from "../../../components/blog/Tags.astro";
+import ListPosts from "../../../components/blog/ListPosts.astro";
 const pageTitle = "Web Development and Technology Blog | Fernando López | EFEELE";
 const description = "Welcome to my blog, where I share my passion for frontend development, web design, and the latest technology trends.";
 const ogimage = {
@@ -11,10 +11,10 @@ const ogimage = {
 };
 const currentUrl = `https://efeele.dev${Astro.url.pathname}`;
 const tweetText = encodeURIComponent(`"${pageTitle}"`);
-import Heading from "../../components/ui/Heading.astro";
-import Share from "../../components/ui/Share.astro";
+import Heading from "../../../components/ui/Heading.astro";
+import Share from "../../../components/ui/Share.astro";
 
-import Languages from "../../components/blog/Languages.astro";
+import Languages from "../../../components/blog/Languages.astro";
 ---
 
 <Layout pageTitle={pageTitle} description={description} ogimage={ogimage}>
