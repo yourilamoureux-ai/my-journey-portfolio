@@ -4,8 +4,8 @@ import Header from "../components/layout/Header.astro";
 import Footer from "../components/layout/Footer.astro";
 import  SpeedInsights  from "@vercel/speed-insights/astro"
 const {
-  pageTitle = "EFEELE | Programmer and Web Developer 🚀",
-  description = "Welcome to EFEELE's website, where I develop software and share knowledge.",
+  pageTitle = "NeonMint by EFEELE 🚀",
+  description = "Welcome to NeonMint by EFEELE, where I develop software and share knowledge.",
   ogimage = {
     url: "/images/imagedefault.webp",
     alt: "Default image of EFEELE",
@@ -14,7 +14,7 @@ const {
 
 const siteUrl = new URL(Astro.url).origin;
 const SEO = {
-  sitename: "EFEELE | Programmer and Web Developer 🚀",
+  sitename: "NeonMint by EFEELE🚀",
   url: siteUrl,
   locale: "en_US",
   author: "Fernando Lopez | EFEELE",
@@ -46,7 +46,7 @@ const twitterimage = `${siteUrl}${ogimage.url}`;
     <meta name="description" content={description} />
     <meta name="author" content={SEO.author} />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://www.efeele.dev/">
+    <link rel="canonical" href={`${Astro.site}${Astro.url.pathname}`}>
     <!-- Open Graph / Facebook -->
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
@@ -56,6 +56,7 @@ const twitterimage = `${siteUrl}${ogimage.url}`;
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content={SEO.sitename} />
     <meta property="og:locale" content={SEO.locale} />
+    
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -66,6 +67,9 @@ const twitterimage = `${siteUrl}${ogimage.url}`;
     <meta name="twitter:site" content={SEO.twitter} />
   
     <meta name="theme-color" content="#0E0E11"/>
+
+    <!-- Sitemap -->
+    <link rel="sitemap" href="/sitemap-index.xml" />
     
   </head>
   <body class="overflow-x-hidden">

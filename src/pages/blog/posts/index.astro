@@ -9,7 +9,7 @@ const ogimage = {
   url: "/images/blogimage.webp",
   alt: "EFEELE.dev logo with green background and light effect. Text: 'Web Development and Technology Blog' and URL 'www.efeele.dev'.",
 };
-const currentUrl = `https://efeele.dev${Astro.url.pathname}`;
+const currentUrl = `${Astro.site}${Astro.url.pathname}`;
 const tweetText = encodeURIComponent(`"${pageTitle}"`);
 import Heading from "../../../components/ui/Heading.astro";
 import Share from "../../../components/ui/Share.astro";
