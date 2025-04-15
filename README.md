@@ -173,6 +173,29 @@ If you encounter any issues during this process, try restarting the development 
 
 To verify that the new language has been added correctly, check the list of available technologies in the user interface after restarting the server.
 
+---
+
+### 🧷 Favicon Setup
+
+To customize your site's favicon and web app icons, you can generate all the necessary variants using [favicon.io](https://favicon.io/favicon-converter/). Upload your logo or icon, and the tool will create a full set of optimized files for various devices and platforms.
+
+Place the generated files in the `📂 public` directory as follows:
+
+```bash
+📂 public
+├── 📄 android-chrome-192x192.png
+├── 📄 android-chrome-512x512.png
+├── 📄 apple-touch-icon.png
+├── 📄 favicon-16x16.png
+├── 📄 favicon-32x32.png
+├── 📄 favicon.ico
+└── 📄 site.webmanifest
+```
+
+> 💡 Don’t forget to update the contents of `site.webmanifest` to match your app’s name, description, and theme color for a complete PWA experience.
+
+---
+
 ### 🎨 Styling
 
 - Use TailwindCSS classes for styling
