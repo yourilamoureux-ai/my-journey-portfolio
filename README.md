@@ -39,7 +39,7 @@
         │   ├── 📁blog   # All posts page
         │   │   ├── index.astro        # Blog home page
         │   │   ├── 📁posts            # Blog posts
-        ├── │   ├── └── index.astro     #All posts page
+        ├── │   ├── └── index.astro     # All posts page
         │   │   ├── 📁tags             # Blog tags
         │   │   └── 📁techs            # Blog technologies
         │   ├── index.astro            # Home page
