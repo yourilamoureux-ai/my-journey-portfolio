@@ -97,21 +97,36 @@
 ## 🚀 Getting Started
 
 1. **📦 Installation**
+
+   ### 🚀**Astro Installation**
+   ```bash
+   npm create astro@latest -- --template EFEELE/neonmint
+   ```
+   or
+   ### 🔧**Manual Installation**
+   
+   #### Clone Repository
+   ```bash
+   git clone https://github.com/EFEELE/NeonMint.git
+   ```
+   #### Install Dependencies
    ```bash
    npm install
    ```
 
-2. **⚡ Development**
+  
+
+3. **⚡ Development**
    ```bash
    npm run dev
    ```
 
-3. **🏗️ Build**
+4. **🏗️ Build**
    ```bash
    npm run build
    ```
 
-4. **👀 Preview**
+5. **👀 Preview**
    ```bash
    npm run preview
    ```
