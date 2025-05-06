@@ -113,10 +113,10 @@ a.inline-block.leading-5.pl-12{
 }
 
 .markdown ol{
-	@apply list-decimal;
+	@apply list-decimal mb-8;
 }
 .markdown ul{
-	@apply list-disc;
+	@apply list-disc mb-8;
 }
 .markdown ul, .markdown ol{
 	@apply text-xl dark:text-gray-200 text-blacktext  max-md:text-lg  pl-4 pb-0;
