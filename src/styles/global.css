@@ -264,21 +264,6 @@ a.inline-block.leading-5.pl-12{
 	display: block;
 	width: 500px;
 	height: 500px;
-	background: #31d69945 !important;
-	bottom: 00px;
-	right: 0px;
-	position: absolute;
-	z-index: -1;
-	border-radius: 50%;
-	filter: blur(50px);
-
-}
-
-.dark .blur-circle::after {
-	content: "";
-	display: block;
-	width: 500px;
-	height: 500px;
 	background: #50fd8f25 !important;
 	bottom: -150px;
 	right: -150px;
