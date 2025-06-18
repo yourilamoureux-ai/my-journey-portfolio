@@ -1,7 +1,7 @@
 
 # NeonMint Template Documentation
 
-![neonmint](https://github.com/user-attachments/assets/068da5e4-50c0-4134-99d3-8cb8ec867d9f)
+![neonmintv2](https://github.com/user-attachments/assets/0a8547b7-27f4-4670-9e3a-b99d04f05a16)
 
 ## 🎯 Overview
 
