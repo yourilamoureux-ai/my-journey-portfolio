@@ -1,6 +1,8 @@
 ---
 layout: /src/layouts/MarkdownAbout.astro
 title: "Youri Lamoureux | My Journey of (re) invention 🚀"
+titleLine1: "Youri Lamoureux"
+titleLine2: "My Journey of (re)invention 🚀"
 description: "The story of my third act: moving to El Salvador, learning to code, and building a new future."
 author: "Youri Lamoureux"
 image:
