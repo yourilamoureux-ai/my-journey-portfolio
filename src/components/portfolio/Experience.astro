@@ -3,51 +3,69 @@ import ExperienceItem from "./ExperienceItem.astro";
 import Heading from "../ui/Heading.astro";
 import { Icon } from "astro-icon/components";
 
-const EXPERIENCE = [
+const { showTitle = true } = Astro.props;
+
+// --- This is the new part ---
+// 1. Define the specific "shape" of a single experience object.
+interface Experience {
+  date: string;
+  title: string;
+  description: string;
+  alignment: 'left' | 'right';
+}
+// --- End of new part ---
+
+// 2. We now tell our array that it will contain objects of the "Experience" shape.
+const EXPERIENCE: Experience[] = [
   {
-    date: "2021 - Present",
-    title: "Software Development Coordinator",
-    company: "EFEELE.DEV",
-    description:
-      "I lead the planning, development, and implementation of software projects to optimize administrative processes and improve digital services. I manage and provide support for technology platforms, coordinating development teams to deliver efficient solutions.",
+    date: "2024 - 2025",
+    title: "Travel Insurance & Assistance",
+    description: "Provided emergency medical assistance and coordination for travelers, managing and processing insurance claims.",
+    alignment: "left",
   },
   {
-    date: "2019 - 2020",
-    title: "Software Development Coordinator",
-    company: "EFEELE.DEV",
-    description:
-      "I lead the planning, development, and implementation of software projects to optimize administrative processes and improve digital services. I manage and provide support for technology platforms, coordinating development teams to deliver efficient solutions.",
+    date: "2013 - 2023",
+    title: "Global Logistics & Marine Cargo Insurance",
+    description: "Progressed through senior management roles, handling complex international claims and managing a global network of surveyors.",
+    alignment: "left",
+  },
+  {
+    date: "2013 - 2021",
+    title: "Professional MMA Judge & Instructor",
+    description: "Officiated for premier MMA promotions across Eurasia and trained the next generation of judges.",
+    alignment: "right",
+  },
+  {
+    date: "2005 - 2011",
+    title: "Customer Service & Supervision",
+    description: "Built a foundational career in customer relations, advancing to a supervisor role to resolve escalated complaints.",
+    alignment: "left",
   },
 ];
 ---
 
 <section class="py-8 px-8 max-md:py-4 mb-4 scroll-m-16" id="experience">
   <div class="flex flex-col pt-8 max-w-4xl mx-auto">
-    <div class="flex gap-4 items-center justify-center">
-      <Icon class="text-3xl dark:text-white text-blacktext" name="briefcase" />
-      <Heading text="Work" textGradient="Experience" level={2} />
-    </div>
+    {showTitle && (
+      <div class="flex gap-4 items-center justify-center">
+        <Icon class="text-3xl dark:text-white text-blacktext" name="briefcase" />
+        <Heading text="Work" textGradient="Experience" level={2} />
+      </div>
+    )}
 
     <div class="relative max-md:mt-0 mt-8" aria-label="Professional experience">
-      <ol class="relative mt-10">
+      <div class="relative mt-10">
         {
-          EXPERIENCE.map((experience, index) => (
-            <li>
-              <article
-                role="article"
-                aria-labelledby={`experience-title-${index}`}
-              >
-                <div
-                  class="flex flex-col gap-2  text-zinc-00 dark:text-zinc-300 md:col-span-3"
-                  aria-describedby={`experience-title-${index}`}
-                >
-                  <ExperienceItem {...experience} />
-                </div>
-              </article>
-            </li>
+          EXPERIENCE.map((experience) => (
+            <ExperienceItem
+              title={experience.title}
+              description={experience.description}
+              date={experience.date}
+              alignment={experience.alignment}
+            />
           ))
         }
-      </ol>
+      </div>
     </div>
   </div>
 </section>

@@ -16,7 +16,7 @@ While I fell in love with the country, I quickly hit a professional wall. The jo
 
 ##  Trading a Rulebook for a Terminal
 
-My career was built on mastering complex systems—first managing global insurance claims in Germany, then traveling the world as a professional MMA judge. I was used to having a plan. For the first time, I had none. So, I decided to build my own.
+My career was built on mastering complex systems—first managing global insurance claims in Germany while traveling the world as a professional MMA judge. I was used to having a plan. For the first time, I had none. So, I decided to build my own.
 
 I traded rulebooks for a command-line terminal and dove headfirst into the world of technology. I spent my days earning GenAI certifications and my nights learning to code by building small, playful apps. It was a pivot from managing systems of people to building systems with code.
 
