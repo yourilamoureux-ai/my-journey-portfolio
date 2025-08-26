@@ -6,7 +6,19 @@ import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
 
 const [staticData] = await getCollection("staticData");
-const { github, githubIconName, linkedin, linkedinIconName } = staticData.data;
+// We now fetch all possible social links
+const {
+  github,
+  githubIconName,
+  linkedin,
+  linkedinIconName,
+  instagram,
+  instagramIconName,
+  x,
+  xIconName,
+  email,
+  emailIconName,
+} = staticData.data;
 
 const currentPath = Astro.url.pathname;
 const routes = ["/", "/portfolio", "/about-me"];
@@ -42,8 +54,12 @@ const navItems = isActiveRoute
         class="max-md:hidden flex items-center justify-center gap-5"
         role="group"
       >
-        <Social link={github} iconName={githubIconName} />
-        <Social link={linkedin} iconName={linkedinIconName} />
+        {/* This is the fix: check if the link exists before rendering */}
+        {x && xIconName && <Social link={x} iconName={xIconName} />}
+        {instagram && instagramIconName && <Social link={instagram} iconName={instagramIconName} />}
+        {github && githubIconName && <Social link={github} iconName={githubIconName} />}
+        {linkedin && linkedinIconName && <Social link={linkedin} iconName={linkedinIconName} />}
+        {email && emailIconName && <Social link={`mailto:${email}`} iconName={emailIconName} />}
       </div>
     </div>
     <div class="flex items-center gap-5 text-xl md:pl-5">

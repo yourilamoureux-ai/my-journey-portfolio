@@ -11,11 +11,13 @@ const {
   email,
   youtube,
   linkedin,
+  x,
   emailIconName,
   youtubeIconName,
   linkedinIconName,
   instagramIconName,
   githubIconName,
+  xIconName,
 } = staticData.data;
 ---
 
@@ -32,17 +34,16 @@ const {
       class="relative h-6 cursor-pointer before:absolute before:left-1/2 before:top-1/2 before:h-full before:w-[40%] before:-translate-x-1/2 before:-translate-y-1/2 before:rounded-full before:bg-[#50fd8f25] before:blur-3xl before:opacity-80 before:-z-1 hover:text-mint-500 transition-all [text-shadow:0_1px_2px_#000]"
     >
       <a href="/" aria-label="Return to homepage">
-        <!-- This icon represents the logo -->
         <Icon name="logo" aria-hidden="true" />
       </a>
     </div>
     <div class="text-center">
       <a
-        href={github}
+        href={github || '#'}
         class="flex items-center justify-center gap-3 text-base font-normal italic max-sm:text-sm"
         aria-label="About the website development"
         ><Icon name="code" aria-hidden="true" /> Developed by <strong
-          >{alias}</strong
+          >{alias || 'Youri Lamoureux'}</strong
         >, with Astro</a
       >
     </div>
@@ -51,31 +52,37 @@ const {
       role="group"
       aria-label="Social media links"
     >
-      <Social
+      {/* This is the fix: check if the link exists before rendering */}
+      {email && emailIconName && <Social
         link={`mailto:${email}`}
         iconName={emailIconName}
         label={`Send email to ${email}`}
-      />
-      <Social
+      />}
+      {instagram && instagramIconName && <Social
         link={instagram}
         iconName={instagramIconName}
-        label={`Visit ${alias} on Instagram`}
-      />
-      <Social
+        label={`Visit ${alias || 'Youri'} on Instagram`}
+      />}
+      {x && xIconName && <Social
+        link={x}
+        iconName={xIconName}
+        label={`Visit ${alias || 'Youri'} on X`}
+      />}
+      {youtube && youtubeIconName && <Social
         link={youtube}
         iconName={youtubeIconName}
-        label={`Visit ${alias} on YouTube`}
-      />
-      <Social
+        label={`Visit ${alias || 'Youri'} on YouTube`}
+      />}
+      {github && githubIconName && <Social
         link={github}
         iconName={githubIconName}
-        label={`Visit ${alias} on GitHub`}
-      />
-      <Social
+        label={`Visit ${alias || 'Youri'} on GitHub`}
+      />}
+      {linkedin && linkedinIconName && <Social
         link={linkedin}
         iconName={linkedinIconName}
-        label={`Visit ${alias} on LinkedIn`}
-      />
+        label={`Visit ${alias || 'Youri'} on LinkedIn`}
+      />}
     </div>
   </nav>
 </footer>

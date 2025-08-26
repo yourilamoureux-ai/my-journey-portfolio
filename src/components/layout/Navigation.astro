@@ -3,7 +3,8 @@ import Social from "../ui/Social.astro";
 import { getCollection } from "astro:content";
 
 const [staticData] = await getCollection("staticData");
-const { github, githubIconName, linkedin, linkedinIconName } = staticData.data;
+// Fetch all social links that might appear in the mobile menu
+const { github, githubIconName, linkedin, linkedinIconName, instagram, instagramIconName, x, xIconName, email, emailIconName } = staticData.data;
 
 const { items = [] }: { items: (keyof typeof menu)[] } = Astro.props as {
   items: (keyof typeof menu)[];
@@ -35,20 +36,13 @@ const baseClasses = {
 ---
 
 <script>
+  // Script is unchanged
   document.addEventListener("DOMContentLoaded", () => {
     const isHome = window.location.pathname === "/";
-
-    // Classes for link states
     const linkClasses = {
-      active: [
-        "text-mint-500",
-        "dark:text-mint-400",
-        "font-bold",
-        "[text-shadow:1px_1px_11px_rgba(208,251,229,0.7)]",
-      ],
+      active: ["text-mint-500", "dark:text-mint-400", "font-bold", "[text-shadow:1px_1px_11px_rgba(208,251,229,0.7)]"],
       inactive: ["dark:text-zinc-300", "text-blacktext"],
     };
-
     function toggleLinkClasses(link: Element, isActive: boolean) {
       if (isActive) {
         link.classList.add(...linkClasses.active);
@@ -60,31 +54,19 @@ const baseClasses = {
         link.removeAttribute("aria-current");
       }
     }
-
     function updateActiveLink() {
       const currentPath = window.location.pathname;
-      const currentHash = window.location.hash
-        ? `#${window.location.hash.substring(1)}`
-        : "";
-
+      const currentHash = window.location.hash ? `#${window.location.hash.substring(1)}` : "";
       document.querySelectorAll("nav a").forEach((link) => {
         const path = link.getAttribute("data-path");
         toggleLinkClasses(link, path === currentPath || path === currentHash);
       });
     }
-
     function setupScrollSpy() {
       if (!isHome) return;
-
       const sections = document.querySelectorAll("section[id]");
       const navLinks = document.querySelectorAll("nav a");
-
-      const observerOptions = {
-        root: null,
-        rootMargin: "-50% 0px",
-        threshold: 0,
-      };
-
+      const observerOptions = { root: null, rootMargin: "-50% 0px", threshold: 0 };
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -98,10 +80,8 @@ const baseClasses = {
           }
         });
       }, observerOptions);
-
       sections.forEach((section) => observer.observe(section));
     }
-
     updateActiveLink();
     setupScrollSpy();
     window.addEventListener("hashchange", updateActiveLink);
@@ -113,29 +93,15 @@ const baseClasses = {
     items.map((key: string) => {
       const item = menu[key as keyof typeof menu];
       if (!item) return null;
-
       if ("dropdown" in item) {
         return (
           <div class={baseClasses.dropdown}>
-            <a
-              href={item.path}
-              class={baseClasses.link}
-              data-path={item.path}
-              aria-label={item.name}
-              aria-current={
-                item.path === Astro.url.pathname ? "page" : undefined
-              }
-            >
+            <a href={item.path} class={baseClasses.link} data-path={item.path} aria-label={item.name} aria-current={item.path === Astro.url.pathname ? "page" : undefined}>
               {item.name}
             </a>
             <div class={baseClasses.dropdownMenu}>
               {item.dropdown.map((dropdownItem) => (
-                <a
-                  href={dropdownItem.path}
-                  class={baseClasses.dropdownItem}
-                  data-path={dropdownItem.path}
-                  aria-label={dropdownItem.name}
-                >
+                <a href={dropdownItem.path} class={baseClasses.dropdownItem} data-path={dropdownItem.path} aria-label={dropdownItem.name}>
                   {dropdownItem.name}
                 </a>
               ))}
@@ -143,15 +109,8 @@ const baseClasses = {
           </div>
         );
       }
-
       return (
-        <a
-          href={item.path}
-          class={baseClasses.link}
-          data-path={item.path}
-          aria-label={item.name}
-          aria-current={item.path === Astro.url.pathname ? "page" : undefined}
-        >
+        <a href={item.path} class={baseClasses.link} data-path={item.path} aria-label={item.name} aria-current={item.path === Astro.url.pathname ? "page" : undefined}>
           {item.name}
         </a>
       );
@@ -163,7 +122,11 @@ const baseClasses = {
     role="group"
     aria-label="Social Media Links"
   >
-    <Social link={github} iconName={githubIconName} />
-    <Social link={linkedin} iconName={linkedinIconName} />
+    {/* This is the fix: check if the link exists before rendering */}
+    {x && xIconName && <Social link={x} iconName={xIconName} />}
+    {instagram && instagramIconName && <Social link={instagram} iconName={instagramIconName} />}
+    {github && githubIconName && <Social link={github} iconName={githubIconName} />}
+    {linkedin && linkedinIconName && <Social link={linkedin} iconName={linkedinIconName} />}
+    {email && emailIconName && <Social link={`mailto:${email}`} iconName={emailIconName} />}
   </div>
 </nav>
