@@ -16,6 +16,7 @@ const {
   email,
   emailIconName,
   github,
+  githubText,
   portfolioImage,
   contactSectionButtonText,
 } = staticData.data;
@@ -64,7 +65,7 @@ const {
           <span
             class="before:mr-2 before:block before:h-1.5 before:w-1.5 before:rounded-full before:bg-green-400 before:shadow-[0px_0px_0px_3px_rgba(34,197,94,0.5)] before:animate-pulse before:content-['']"
           ></span>
-          Available for work
+          Open to Collaboration
         </span>
 
         <h1
@@ -72,17 +73,17 @@ const {
         >
           {profileName} 👋
         </h1>
+        
         <p
           class="mb-0 text-lg font-semibold leading-8 text-blacktext dark:text-gray-200 max-xl:text-base"
         >
           <span
             class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200"
             >{profileTitle}</span
-          > with <span
+          > on a journey of reinvention in El Salvador after global careers in Marine Cargo Insurance and MMA judging. I’m <span
             class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200"
-            >8 years of experience</span
-          >, passionate about development, technology, and coffee that sparks
-          ideas. I love bringing digital projects to life. 🚀☕
+            >learning Generative AI in public</span
+          > so others can explore, fail, and grow with me.
         </p>
 
         <div class="flex gap-4 max-sm:flex-col max-sm:items-center">
@@ -93,7 +94,7 @@ const {
           />
           <Button
             link={profileLink}
-            text="About Me"
+            text="My Story"
             iconName="person"
             variant="dark"
           />
@@ -117,7 +118,7 @@ const {
     </div>
 
     <div
-      class="col-start-1 row-start-2 rounded-2xl bg-linear-to-r from-mint-300 dark:from-mint-600 to-mint-50 dark:to-mint-200/5 hover:to-mint-300/30 dark:hover:to-mint-600/30 p-[.2rem] transition-all ease-in duration-150 hover:scale-105 hover:shadow-[0_20px_50px_rgba(13,188,130,0.4)] z-40 md:col-start-3"
+      class="col-start-1 row-start-2 rounded-2xl bg-linear-to-r from-mint-300 dark:from-mint-600 to-mint-50 dark:to-mint-200/5 p-[.2rem] transition-all ease-in duration-150 hover:scale-105 hover:shadow-[0_20px_50px_rgba(13,188,130,0.4)] z-40 md:col-start-3"
     >
       <div class="h-full w-full overflow-hidden rounded-2xl dark:bg-zinc-900">
         <div
@@ -132,7 +133,7 @@ const {
               class="relative flex h-full flex-col gap-8 p-8 dark:before:bg-[radial-gradient(circle,rgba(13,188,130)_0,rgba(1,45,34)_100%)] before:bg-[radial-gradient(circle,rgba(95,255,202)_0,rgba(144,253,210)_100%)] before:absolute before:left-30 before:bottom-30 before:h-[30%] before:aspect-square before:rounded-full before:blur-3xl before:opacity-90 before:transition before:z-0 max-xl:p-5 max-md:p-4 xl:before:bottom-10"
             >
               <div class="z-2">
-                <Heading text="Do you like this site's design?" level={3} />
+                <Heading text={githubText} level={3} />
               </div>
 
               <Icon
@@ -184,21 +185,18 @@ const {
           />
           <Heading text="Projects" level={3} />
         </div>
+        
         <p
           class="z-2 my-6 text-lg font-semibold leading-6 dark:text-gray-200 text-blacktext max-xl:text-base max-w-[90%] max-md:max-w-[85%]"
         >
-          I love <span
+          I believe the best way to learn is by <span
             class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200"
-            >turning ideas into real projects.</span
+            >building and sharing.</span
           >
-          <br /> Here I show you some of the <span
+          <br /> Here are some of the <span
             class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200"
-            >developments</span
-          > I've worked on, applying technology, design, and lots of creativity.
-          <span
-            class="bg-linear-to-r from-riptide-500 to-mint-500 font-black bg-clip-text text-transparent dark:from-riptide-300 dark:to-mint-200"
-            >Check them out!</span
-          >
+            >experiments and projects</span
+          > I've created on my journey from idea to execution.
         </p>
         <img
           class="relative left-0 z-0 mt-40 w-full object-cover transition-all ease-in-out duration-500 group-hover:rotate-2 group-hover:scale-185 max-xl:mt-28 max-lg:mt-10 max-sm:mt-0 max-md:scale-100 max-sm:scale-125 scale-180 max-md:group-hover:scale-105 before:bg-[radial-gradient(circle,rgba(13,188,130)_0,rgba(1,45,34)_100%)] before:absolute before:left-30 before:-bottom-0 before:h-[80%] before:aspect-square before:rounded-full before:blur-3xl before:opacity-80 before:-z-10 before:transition"
