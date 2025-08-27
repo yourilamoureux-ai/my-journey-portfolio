@@ -1,7 +1,7 @@
 ---
 layout:  /src/layouts/ProjectLayout.astro
 title: 'Les Aventures Magiques'
-pubDate: 2024-11-15
+pubDate: 2025-05-29
 description: 'My first interactive storybook web app, built from scratch for my nephews using HTML, CSS, and Vanilla JavaScript.'
 languages: ["html", "css", "javascript", "tailwind", "netlify"]
 image:
