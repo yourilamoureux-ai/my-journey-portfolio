@@ -1,0 +1,78 @@
+{
+  "nav.home": "Start",
+  "nav.experience": "Erfahrung",
+  "nav.projects": "Projekte",
+  "nav.about": "Über mich",
+  "nav.blog": "Blog",
+  "nav.blog_all_posts": "Alle Beiträge",
+  
+  "header.main_nav_aria_label": "Hauptnavigation",
+  "header.open_menu": "Menü öffnen",
+
+  "footer.developed_by": "Entwickelt von",
+  "footer.with_astro": ", mit Astro",
+  "footer.site_footer_aria_label": "Fußzeile der Website",
+  "footer.nav_aria_label": "Fußzeilen-Navigation",
+  "footer.about_development_aria_label": "Über die Entwicklung der Website",
+  "footer.social_links_aria_label": "Social-Media-Links",
+
+  "contact.title": "Immer offen für Austausch",
+  "contact.subtitle": "Haben Sie eine Idee, ein Projekt oder möchten Sie einfach nur Geschichten austauschen? Schreiben Sie mir eine Nachricht.",
+  "contact.button": "Kontakt",
+
+  "blog.categories": "Kategorien",
+  "blog.technologies": "Technologien",
+  
+  "home.hero.aria_label": "Berufliches Profil und Einführung",
+  "home.hero.profile_alt": "Ein Profilfoto von Youri Lamoureux",
+  "home.hero.profile_link_aria": "Seite Über mich ansehen",
+  "home.hero.status": "Offen für Zusammenarbeit",
+  "home.hero.name": "Youri Lamoureux",
+  "home.hero.title": "Vibe Coder & Professioneller Bug-Ersteller",
+  "home.hero.bio_part1": "auf einer Reise der Neuerfindung in El Salvador nach globalen Karrieren in der Seefrachtversicherung und als MMA-Kampfrichter. Ich lerne",
+  "home.hero.bio_highlight": "Generative KI öffentlich",
+  "home.hero.bio_part2": "damit andere mit mir entdecken, scheitern und wachsen können.",
+  "home.hero.story_button": "Meine Geschichte",
+  "home.hobbies.heading": "Jenseits des Codes",
+  "home.tech.heading": "Tech-",
+  "home.tech.subheading": "Stack",
+  "home.github_promo.heading": "Der Code hinter der Seite",
+  "home.github_promo.aria_label": "Das Code-Repository dieser Seite auf GitHub ansehen",
+  "home.projects_promo.heading": "Projekte",
+  "home.projects_promo.body": "Ich glaube, der beste Weg zu lernen ist, indem man baut und teilt. Hier zeige ich einige der Projekte, an denen ich gearbeitet habe, unter Anwendung von Technologie, Design und viel Kreativität. Schauen Sie sie sich an!",
+
+  "projects.heading": "Projekte",
+  "projects.subheading": "Abgeschlossen",
+  "projects.view_more_button": "Mehr anzeigen...",
+  "projects.aria_label": "Projektsektion ansehen",
+  "projects.intro": "Ich verwandle Ideen durch Code, Kreativität und viele schöne Fehler in die Realität. Jedes Projekt hier erzählt die Geschichte, wie ich Schritt für Schritt etwas Neues lerne und die Dinge dabei herausfinde.",
+
+  "experience.heading": "Berufs-",
+  "experience.subheading": "erfahrung",
+  "experience.jobs": [
+    {
+      "date": "2024 - 2025",
+      "title": "Reiseversicherung & Assistance",
+      "description": "Leistete medizinische Nothilfe und Koordination für Reisende, verwaltete und bearbeitete Versicherungsansprüche.",
+      "alignment": "left"
+    },
+    {
+      "date": "2013 - 2023",
+      "title": "Transportversicherung für Güter",
+      "description": "Aufstieg in leitende Managementpositionen, Bearbeitung komplexer internationaler Schadensfälle und Verwaltung eines globalen Netzwerks von Sachverständigen.",
+      "alignment": "left"
+    },
+    {
+      "date": "2013 - 2021",
+      "title": "Professioneller MMA-Kampfrichter & Ausbilder",
+      "description": "Amtierte für führende MMA-Promotionen in Eurasien und bildete die nächste Generation von Kampfrichtern aus.",
+      "alignment": "right"
+    },
+    {
+      "date": "2005 - 2011",
+      "title": "Kundenservice & Supervision",
+      "description": "Aufbau einer grundlegenden Karriere im Kundenkontakt, Aufstieg zur Supervisorenrolle zur Lösung eskalierter Beschwerden.",
+      "alignment": "left"
+    }
+  ]
+}

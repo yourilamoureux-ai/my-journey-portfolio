@@ -1,0 +1,79 @@
+{
+  "nav.home": "Home",
+  "nav.experience": "Experience",
+  "nav.projects": "Projects",
+  "nav.about": "About Me",
+  "nav.blog": "Blog",
+  "nav.blog_all_posts": "All Posts",
+  
+  "header.main_nav_aria_label": "Main navigation",
+  "header.open_menu": "Open menu",
+  
+  "footer.developed_by": "Developed by",
+  "footer.with_astro": ", with Astro",
+  "footer.site_footer_aria_label": "Site footer",
+  "footer.nav_aria_label": "Footer navigation",
+  "footer.about_development_aria_label": "About the website development",
+  "footer.social_links_aria_label": "Social media links",
+
+  "contact.title": "Always Open to Connect",
+  "contact.subtitle": "Got an idea, project, or just want to swap stories? Drop me a message.",
+  "contact.button": "Contact Me",
+
+  "blog.categories": "Categories",
+  "blog.technologies": "Technologies",
+
+  "home.hero.aria_label": "Professional profile and introduction",
+  "home.hero.profile_alt": "A profile photo of Youri Lamoureux",
+  "home.hero.profile_link_aria": "View about me page",
+  "home.hero.status": "Open to Collaboration",
+  "home.hero.name": "Youri Lamoureux",
+  "home.hero.title": "Vibe Coder & Professional Bug Creator",
+  "home.hero.bio_part1": "on a journey of reinvention in El Salvador after global careers in Marine Cargo Insurance and MMA judging. I’m",
+  "home.hero.bio_highlight": "learning Generative AI in public",
+  "home.hero.bio_part2": "so others can explore, fail, and grow with me.",
+  "home.hero.story_button": "My Story",
+  "home.hobbies.heading": "Beyond the Code",
+  "home.tech.heading": "Tech",
+  "home.tech.subheading": "Stack",
+  "home.github_promo.heading": "The Code Behind the Site",
+  "home.github_promo.aria_label": "View this site's code repository on GitHub",
+  "home.projects_promo.heading": "Projects",
+  "home.projects_promo.body": "I believe the best way to learn is by building and sharing. Here I show you some of the projects I've worked on, applying technology, design, and lots of creativity. Check them out!",
+
+  
+  "projects.heading": "Projects",
+  "projects.subheading": "Completed",
+  "projects.view_more_button": "Show More...",
+  "projects.aria_label": "View projects section",
+  "projects.intro": "I turn ideas into reality through code, creativity, and a lot of beautiful mistakes. Each project here tells the story of learning something new and figuring things out, one step at a time.",
+
+  "experience.heading": "Work",
+  "experience.subheading": "Experience",
+  "experience.jobs": [
+    {
+      "date": "2024 - 2025",
+      "title": "Travel Insurance & Assistance",
+      "description": "Provided emergency medical assistance and coordination for travelers, managing and processing insurance claims.",
+      "alignment": "left"
+    },
+    {
+      "date": "2013 - 2023",
+      "title": "Cargo Transport Insurance",
+      "description": "Progressed through senior management roles, handling complex international claims and managing a global network of surveyors.",
+      "alignment": "left"
+    },
+    {
+      "date": "2013 - 2021",
+      "title": "Professional MMA Judge & Instructor",
+      "description": "Officiated for premier MMA promotions across Eurasia and trained the next generation of judges.",
+      "alignment": "right"
+    },
+    {
+      "date": "2005 - 2011",
+      "title": "Customer Service & Supervision",
+      "description": "Built a foundational career in customer relations, advancing to a supervisor role to resolve escalated complaints.",
+      "alignment": "left"
+    }
+  ]
+}

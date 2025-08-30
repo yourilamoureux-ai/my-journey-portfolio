@@ -1,0 +1,78 @@
+{
+  "nav.home": "Inicio",
+  "nav.experience": "Experiencia",
+  "nav.projects": "Proyectos",
+  "nav.about": "Sobre mí",
+  "nav.blog": "Blog",
+  "nav.blog_all_posts": "Todos los posts",
+
+  "header.main_nav_aria_label": "Navegación principal",
+  "header.open_menu": "Abrir menú",
+
+  "footer.developed_by": "Desarrollado por",
+  "footer.with_astro": ", con Astro",
+  "footer.site_footer_aria_label": "Pie de página del sitio",
+  "footer.nav_aria_label": "Navegación del pie de página",
+  "footer.about_development_aria_label": "Sobre el desarrollo del sitio web",
+  "footer.social_links_aria_label": "Enlaces de redes sociales",
+  
+  "contact.title": "Siempre abierto a conectar",
+  "contact.subtitle": "¿Tienes una idea, un proyecto o simplemente quieres intercambiar historias? Envíame un mensaje.",
+  "contact.button": "Contáctame",
+
+  "blog.categories": "Categorías",
+  "blog.technologies": "Tecnologías",
+
+  "home.hero.aria_label": "Perfil profesional e introducción",
+  "home.hero.profile_alt": "Una foto de perfil de Youri Lamoureux",
+  "home.hero.profile_link_aria": "Ver la página sobre mí",
+  "home.hero.status": "Abierto a colaborar",
+  "home.hero.name": "Youri Lamoureux",
+  "home.hero.title": "Vibe Coder & Creador Profesional de Bugs",
+  "home.hero.bio_part1": "en un viaje de reinvención en El Salvador después de carreras globales en seguros de carga marítima y arbitraje de MMA. Estoy",
+  "home.hero.bio_highlight": "aprendiendo IA Generativa en público",
+  "home.hero.bio_part2": "para que otros puedan explorar, fallar y crecer conmigo.",
+  "home.hero.story_button": "Mi historia",
+  "home.hobbies.heading": "Más allá del código",
+  "home.tech.heading": "Stack",
+  "home.tech.subheading": "Tecnológico",
+  "home.github_promo.heading": "El código detrás del sitio",
+  "home.github_promo.aria_label": "Ver el repositorio de código de este sitio en GitHub",
+  "home.projects_promo.heading": "Proyectos",
+  "home.projects_promo.body": "Creo que la mejor manera de aprender es construyendo y compartiendo. Aquí muestro algunos de los proyectos en los que he trabajado, aplicando tecnología, diseño y mucha creatividad. ¡Échales un vistazo!",
+
+  "projects.heading": "Proyectos",
+  "projects.subheading": "Completados",
+  "projects.view_more_button": "Mostrar más...",
+  "projects.aria_label": "Ver la sección de proyectos",
+  "projects.intro": "Convierto ideas en realidad a través de código, creatividad y muchos errores hermosos. Cada proyecto aquí cuenta la historia de aprender algo nuevo y descubrir las cosas sobre la marcha, un paso a la vez.",
+
+  "experience.heading": "Trayectoria",
+  "experience.subheading": "Profesional",
+  "experience.jobs": [
+    {
+      "date": "2024 - 2025",
+      "title": "Seguro y asistencia de viaje",
+      "description": "Proporcioné asistencia médica de emergencia y coordinación para viajeros, gestionando y procesando reclamaciones de seguros.",
+      "alignment": "left"
+    },
+    {
+      "date": "2013 - 2023",
+      "title": "Seguro de transporte de mercancías",
+      "description": "Avancé a través de puestos de alta dirección, manejando reclamaciones internacionales complejas y gestionando una red global de peritos.",
+      "alignment": "left"
+    },
+    {
+      "date": "2013 - 2021",
+      "title": "Juez e instructor profesional de MMA",
+      "description": "Oficié para las principales promociones de MMA en Eurasia y entrené a la siguiente generación de jueces.",
+      "alignment": "right"
+    },
+    {
+      "date": "2005 - 2011",
+      "title": "Servicio al cliente y supervisión",
+      "description": "Construí una carrera fundamental en relaciones con el cliente, avanzando a un puesto de supervisor para resolver quejas escaladas.",
+      "alignment": "left"
+    }
+  ]
+}

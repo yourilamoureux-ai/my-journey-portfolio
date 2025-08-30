@@ -1,0 +1,54 @@
+[33mae85bc1[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m feat(i18n): implement multi-language support for UI and content
+[33m26c363a[m fix(layout): replace theme logo and correct header/footer alignment
+[33m502efbf[m feat(content): personalize home page hero section
+[33m267dd88[m feat: add all project pages and remove demo
+[33m804fdc1[m feat: implement alternating timeline for experience section
+[33m67f4723[m fix: resolve social link crash and finalize page layout
+[33m874eaf0[m feat: personalize site-wide data and contact section
+[33m287a1ff[m feat: finalize about page layout and tech stack
+[33m5c8622b[m refactor: improve TOC title handling with separate fields
+[33mc7ddd45[m feat: complete personalization of about me page
+[33m5df8b0a[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m build(deps): bump form-data in the npm_and_yarn group across 1 directory (#17)
+[33mc9f1291[m Added 404 page (#18)
+[33m1604086[m Code refactor & accessibility improvements (#16)
+[33m75b7628[m Code Refactoring  (#15)
+[33m84e423f[m Fixed experience & listproject components with component-based architecture,  Fixed place and logic of moreProjectsBtn (#14)
+[33m17e102b[m chore: update image in README
+[33m1ca50e7[m chore: update image in README
+[33mc2c1af6[m chore: update main project image
+[33m99f4bd4[m chore: upgrade Tailwind CSS from v4.0.8 to v4.1.8
+[33m83ff497[m refactor: update .blur-circle::after style in dark mode (#12)
+[33m7774685[m Fixed Maintainability Issues (#11)
+[33m7a127a4[m style(ui): unify border padding to p-[2px] across themes (#8)
+[33m441bfd0[m docs: add pull request template to standardize PR submissions
+[33m01f3db8[m chore(funding): add FUNDING.yml to enable sponsorship options
+[33m725cdc3[m build(deps): bump the npm_and_yarn group across 1 directory with 2 updates (#10)
+[33m1b21576[m Implemented Astro native content collection for static data (#9)
+[33mb371cba[m fix(ui): resolved z-index conflict between navbar and projects section
+[33m962d7ac[m Fixed Broken Link (#7)
+[33m90bef38[m style(markdown): update list styling with margin adjustment
+[33m8cdbef9[m Merge branch 'main' of https://github.com/EFEELE/NeonMint
+[33mcc4608f[m refactor(MarkdownPostLayout): clean up code formatting and improve layout structure
+[33m51a30b3[m Create LICENSE
+[33m82da0c1[m docs(readme): add favicon setup instructions using favicon.io
+[33me3045f8[m docs: Update README.md
+[33ma86f149[m feat(seo): update homepage title for better SEO
+[33mff1c594[m feat(SEO): update favicon images
+[33m317943d[m Merge branch 'main' of https://github.com/EFEELE/NeonMint
+[33m3c2b794[m feat(SEO): Add exclude filter to sitemap
+[33m09d7870[m Merge branch 'main' of https://github.com/EFEELE/NeonMint
+[33m09dc543[m feat(SEO):  Fix and improve links for better search engine visibility
+[33maf8ad8c[m Update README.md
+[33m48c0de5[m Update blog navigation and post link paths for consistency
+[33mbc89d1b[m FIX all posts redirect page
+[33mb6272a5[m Update README.md and blog post readme to clarify blog structure and page descriptions
+[33me5127ec[m Update BlogPost.astro styles to enhance hover effects and adjust transition durations
+[33mcf3194d[m Refactor Project.astro styles for improved hover effects and transition durations
+[33m3e09845[m Update README.md
+[33md3d035b[m Update Astro 5.6.1
+[33ma4f1b1e[m Fix page title in blog techs index and add missing languages prop to Languages component
+[33m4b50525[m Update .gitignore to include VSCode settings directory
+[33m0a37676[m CSS styles for markdown elements This reverts commit a935d4cdfb27ed4c8e553766451e5173ff35a841.
+[33ma935d4c[m Refactor global CSS styles for markdown elements and update navigation bar comments to Spanish
+[33mb657f63[m Update README.md
+[33mc2421d7[m first commit
