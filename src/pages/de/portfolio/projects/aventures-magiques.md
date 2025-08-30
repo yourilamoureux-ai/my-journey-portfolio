@@ -1,5 +1,5 @@
 ---
-layout:  /src/layouts/ProjectLayout.astro
+layout: /src/layouts/ProjectLayout.astro
 title: 'Die magischen Abenteuer'
 pubDate: 2025-05-29
 description: 'Meine erste interaktive Bilderbuch-Web-App, von Grund auf für meine Neffen mit HTML, CSS und Vanilla JavaScript erstellt.'

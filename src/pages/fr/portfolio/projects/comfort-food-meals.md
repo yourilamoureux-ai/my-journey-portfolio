@@ -1,5 +1,5 @@
 ---
-layout:  /src/layouts/ProjectLayout.astro
+layout: /src/layouts/ProjectLayout.astro
 title: 'Plats Réconfortants'
 pubDate: 2025-05-29
 description: 'Une application web pour découvrir et sauvegarder vos recettes réconfortantes préférées, créée avec React et Firebase.'

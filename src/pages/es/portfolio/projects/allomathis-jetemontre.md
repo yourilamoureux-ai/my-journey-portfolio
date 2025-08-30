@@ -1,5 +1,5 @@
 ---
-layout:  /src/layouts/ProjectLayout.astro
+layout: /src/layouts/ProjectLayout.astro
 title: 'Hola, Mathis, te muestro'
 pubDate: 2025-06-30
 description: 'Una aplicación web educativa e interactiva para que mis sobrinos lean cuentos para dormir.'

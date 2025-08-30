@@ -1,5 +1,5 @@
 ---
-layout:  /src/layouts/ProjectLayout.astro
+layout: /src/layouts/ProjectLayout.astro
 title: 'Hallo, Mathis, ich zeige dir'
 pubDate: 2025-06-30
 description: 'Eine lehrreiche und interaktive Web-App für meine Neffen zum Lesen von Gutenachtgeschichten.'

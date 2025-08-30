@@ -1,5 +1,5 @@
 ---
-layout:  /src/layouts/ProjectLayout.astro
+layout: /src/layouts/ProjectLayout.astro
 title: 'Las Aventuras Mágicas'
 pubDate: 2025-05-29
 description: 'Mi primera aplicación web interactiva de cuentos, construida desde cero para mis sobrinos usando HTML, CSS y JavaScript Vanilla.'

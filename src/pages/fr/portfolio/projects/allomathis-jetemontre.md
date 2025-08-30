@@ -1,5 +1,5 @@
 ---
-layout:  /src/layouts/ProjectLayout.astro
+layout: /src/layouts/ProjectLayout.astro
 title: 'Allô, Mathis, je te montre...'
 pubDate: 2025-06-30
 description: 'Une application web éducative et interactive pour que mes neveux lisent des histoires avant de dormir'

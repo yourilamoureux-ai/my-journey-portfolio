@@ -1,5 +1,5 @@
 ---
-layout:  /src/layouts/ProjectLayout.astro
+layout: /src/layouts/ProjectLayout.astro
 title: 'Comidas Reconfortantes'
 pubDate: 2025-05-29
 description: 'Una aplicación web para descubrir y guardar tus recetas de comida reconfortante favoritas, construida con React y Firebase.'

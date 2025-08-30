@@ -1,5 +1,5 @@
 ---
-layout:  /src/layouts/ProjectLayout.astro
+layout: /src/layouts/ProjectLayout.astro
 title: 'Comfort Food Mahlzeiten'
 pubDate: 2025-05-29
 description: 'Eine Web-App zum Entdecken und Speichern Ihrer Lieblings-Comfort-Food-Rezepte, erstellt mit React und Firebase.'
