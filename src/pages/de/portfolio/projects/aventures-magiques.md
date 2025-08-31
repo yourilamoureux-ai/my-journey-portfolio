@@ -5,8 +5,8 @@ pubDate: 2025-05-29
 description: 'Meine erste interaktive Bilderbuch-Web-App, von Grund auf für meine Neffen mit HTML, CSS und Vanilla JavaScript erstellt.'
 languages: ["html", "css", "javascript", "tailwind", "netlify"]
 image:
-  url: "/images/projects/aventures-magiques.png"
-  alt: "Ein Screenshot der Web-App 'Die magischen Abenteuer'."
+  url: "/images/projects/aventures-magiques.png"
+  alt: "Ein Screenshot der Web-App 'Die magischen Abenteuer'."
 --- 
 
 **Die magischen Abenteuer** ist die erste interaktive Bilderbuch-Web-App, die ich für meine Neffen erstellt habe. Es ist eine einfache Single-Page-Anwendung, die als farbenfrohes und ansprechendes Erzählerlebnis für kleine Kinder konzipiert ist und in einer einzigen HTML-Datei enthalten ist.

@@ -5,8 +5,8 @@ pubDate: 2025-05-29
 description: 'Une application web pour découvrir et sauvegarder vos recettes réconfortantes préférées, créée avec React et Firebase.'
 languages: ["react", "ts", "vite", "tailwind", "firebase"]
 image:
-  url: "/images/projects/comfort-food.png"
-  alt: "Une capture d'écran de l'application web Plats Réconfortants."
+  url: "/images/projects/comfort-food.png"
+  alt: "Une capture d'écran de l'application web Plats Réconfortants."
 --- 
 
 **Plats Réconfortants** est une application web épurée et moderne conçue pour aider les utilisateurs à découvrir, parcourir et sauvegarder leurs recettes préférées. Elle offre une interface simple et intuitive pour trouver l'inspiration culinaire.

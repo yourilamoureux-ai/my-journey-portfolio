@@ -1,6 +1,16 @@
 ---
 import BlogPost from "./BlogPost.astro";
 import Heading from "../ui/Heading.astro";
+import { useTranslations } from '@/i18n/utils.ts';
+
+// --- NEW I18N LOGIC ---
+// 1. Get the current language from the URL.
+const allLocales = ['en', 'fr', 'de', 'es'];
+const pathname = Astro.url.pathname;
+const firstSegment = pathname.split('/')[1];
+const locale = allLocales.includes(firstSegment) ? firstSegment : 'en';
+
+const t = useTranslations(locale);
 
 // Prop to determine whether to exclude the latest post or a specific post
 export interface Props {
@@ -11,24 +21,57 @@ export interface Props {
 
 const { excludeLatest = false, currentPostUrl = "", all = false } = Astro.props;
 
-const allPosts = await Astro.glob("../../pages/blog/posts/*.md");
+// Define the shape of a post object
+interface BlogPost {
+  url: string;
+  file: string;
+  frontmatter: {
+    title: string;
+    pubDate: string;
+    tags: string[];
+    languages: string[];
+    image: {
+        url: string;
+        alt: string;
+    };
+  };
+}
+
+// 2. Fetch all blog posts from ALL language directories.
+const postImports = import.meta.glob<BlogPost>("../../pages/**/blog/posts/*.md", { eager: true });
+const allPostsGlob: BlogPost[] = Object.values(postImports);
+
+// 3. Filter for posts that match the current language.
+let postsToShow = allPostsGlob.filter((post: BlogPost) => {
+  if (!post || !post.file) {
+    return false;
+  }
+  if (locale === 'en') {
+    return !allLocales.some(lang => lang !== 'en' && post.file.includes(`/pages/${lang}/`));
+  }
+  return post.file.includes(`/pages/${locale}/`);
+});
+
+// 4. THE FIX: Add a defensive filter to remove any null/invalid entries.
+postsToShow = postsToShow.filter(post => post && post.url);
+
+// --- END OF NEW I18N LOGIC ---
+
+
 // Sort by date in descending order (newest first)
-allPosts.sort((a, b) => {
+postsToShow.sort((a, b) => {
   const dateA = new Date(a.frontmatter.pubDate).getTime();
   const dateB = new Date(b.frontmatter.pubDate).getTime();
   return dateB - dateA;
 });
 
-// Filter posts according to props
-let postsToShow = allPosts;
-
+// Filter posts according to props (this logic remains the same)
 if (currentPostUrl) {
   // Exclude current post if its URL is provided
   postsToShow = postsToShow.filter((post) => {
-    if (!post.url) return false; // If no URL, keep the post
-    // Normalize URLs for comparison
-    const normalizedPostUrl = post.url.replace(/\/$/, ""); // Remove trailing slash if exists
-    const normalizedCurrentUrl = currentPostUrl.replace(/\/$/, ""); // Remove trailing slash if exists
+    if (!post.url) return false;
+    const normalizedPostUrl = post.url.replace(/\/$/, "");
+    const normalizedCurrentUrl = currentPostUrl.replace(/\/$/, "");
     return normalizedPostUrl !== normalizedCurrentUrl;
   });
 } else if (excludeLatest) {

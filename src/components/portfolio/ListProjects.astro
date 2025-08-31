@@ -2,14 +2,68 @@
 import Project from "./Project.astro";
 import Heading from "../ui/Heading.astro";
 import { Icon } from "astro-icon/components";
+import { useTranslations } from '@/i18n/utils.ts';
 
-const allPosts = await Astro.glob("../../pages/portfolio/projects/*.md");
+// Supported locales
+const allLocales = ['en', 'fr', 'de', 'es'];
 
-// Sort by descending date (most recent first)
+// Detect current locale from URL
+const pathname = Astro.url.pathname;
+const firstSegment = pathname.split('/')[1];
+const locale = allLocales.includes(firstSegment) ? firstSegment : 'en';
+
+const t = useTranslations(locale);
+
+interface ProjectPost {
+  url?: string;
+  file: string;
+  frontmatter: {
+    title: string;
+    description: string;
+    pubDate: string;
+    languages: string[];
+    image: {
+      url: string;
+      alt: string;
+    };
+  };
+}
+
+// Grab all project markdown files
+const projectImports = import.meta.glob<ProjectPost>(
+  "../../pages/**/portfolio/projects/*.md",
+  { eager: true }
+);
+
+// Normalize & enrich posts with url + locale
+let allPosts = Object.entries(projectImports).map(([file, post]) => {
+  const normalizedPath = file.replace(/\\/g, "/");
+
+  // derive locale from path
+  const match = normalizedPath.match(/\/pages\/(fr|es|de)\//);
+  const fileLocale = match ? match[1] : "en";
+
+  // derive URL from file path (works for all langs)
+  const derivedUrl = normalizedPath
+    .replace(/^.*\/pages/, "")
+    .replace(/\.md$/, "/");
+
+  return {
+    ...post,
+    file: normalizedPath,
+    locale: fileLocale,
+    url: post.url ?? derivedUrl,
+  };
+});
+
+// Filter for the current locale
+allPosts = allPosts.filter((post) => post.locale === locale);
+
+// Sort newest first
 allPosts.sort(
   (a, b) =>
     new Date(b.frontmatter.pubDate).getTime() -
-    new Date(a.frontmatter.pubDate).getTime(),
+    new Date(a.frontmatter.pubDate).getTime()
 );
 ---
 
@@ -20,25 +74,13 @@ allPosts.sort(
   <div class="mx-auto max-w-7xl py-8">
     <div class="flex gap-4 items-center justify-center text-center">
       <Icon class="text-3xl dark:text-white text-blacktext" name="code" />
-      <Heading text="Projects" textGradient="Completed" level={2} />
+      <Heading text={t('projects.heading')} textGradient={t('projects.subheading')} level={2} />
     </div>
 
     <p
       class="z-2 text-center mx-auto text-lg max-xl:text-base max-w-2xl dark:text-gray-200 text-blacktext my-6 leading-6 font-medium"
+      set:html={t('projects.intro')}
     >
-      I turn <b
-        class="bg-linear-to-r from-riptide-500 to-mint-500 dark:from-riptide-300 dark:to-mint-200 text-transparent bg-clip-text"
-        >ideas into reality</b
-      >
-      through code, creativity, and a lot of <b
-        class="whitespace-nowrap bg-linear-to-r from-riptide-500 to-mint-500 dark:from-riptide-300 dark:to-mint-200 text-transparent bg-clip-text"
-        >beautiful mistakes</b
-      >.
-      <br />
-      Each project here tells the story of <b
-        class="bg-linear-to-r from-riptide-500 to-mint-500 dark:from-riptide-300 dark:to-mint-200 text-transparent bg-clip-text"
-        >learning something new</b
-      > and figuring things out, one step at a time.
     </p>
     <slot />
   </div>
@@ -53,7 +95,6 @@ allPosts.sort(
           url={post.url}
           title={post.frontmatter.title}
           description={post.frontmatter.description}
-          date={post.frontmatter.pubDate}
           languages={post.frontmatter.languages}
           image={post.frontmatter.image}
         />
@@ -68,7 +109,7 @@ allPosts.sort(
     <button
       class="absolute font-bold cursor-pointer text-mint-400 dark:text-mint-100 hover:text-mint-500 dark:hover:text-mint-300 transition-all"
     >
-      Show more...
+      {t('projects.view_more_button')}
     </button>
   </div>
 </section>
@@ -79,14 +120,9 @@ allPosts.sort(
     const moreProjectsBtn = document.querySelector("#moreProjects");
 
     if (container && moreProjectsBtn) {
-      // Expand container to show all projects
-      container.classList.remove("h-[150vh]");
-      container.classList.remove("h-auto");
-      // Hide the "View More" button after animation completes
-      moreProjectsBtn.classList.add("hidden");
-      setTimeout(() => {
-        moreProjectsBtn.classList.add("hidden");
-      }, 500);
+      container.classList.remove("max-h-[150vh]");
+      container.classList.add("max-h-full");
+      moreProjectsBtn.classList.add("opacity-0", "pointer-events-none");
     }
   });
 </script>

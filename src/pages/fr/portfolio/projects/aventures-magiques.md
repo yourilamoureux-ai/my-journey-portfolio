@@ -5,8 +5,8 @@ pubDate: 2025-05-29
 description: "Ma première application web interactive de livre d'histoires, créée de A à Z pour mes neveux en utilisant HTML, CSS et JavaScript Vanilla."
 languages: ["html", "css", "javascript", "tailwind", "netlify"]
 image:
-  url: "/images/projects/aventures-magiques.png"
-  alt: "Une capture d'écran de l'application web 'Les Aventures Magiques'."
+  url: "/images/projects/aventures-magiques.png"
+  alt: "Une capture d'écran de l'application web 'Les Aventures Magiques'."
 --- 
 
 **Les Aventures Magiques** est la première application web de livre d'histoires interactive que j'ai créée pour mes neveux. C'est une application simple, d'une seule page, conçue pour être une expérience de narration colorée et engageante pour les jeunes enfants, le tout contenu dans un unique fichier HTML.

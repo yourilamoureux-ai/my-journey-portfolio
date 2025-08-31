@@ -5,8 +5,8 @@ pubDate: 2025-05-29
 description: 'Una aplicación web para descubrir y guardar tus recetas de comida reconfortante favoritas, construida con React y Firebase.'
 languages: ["react", "ts", "vite", "tailwind", "firebase"]
 image:
-  url: "/images/projects/comfort-food.png"
-  alt: "Una captura de pantalla de la aplicación web Comidas Reconfortantes."
+  url: "/images/projects/comfort-food.png"
+  alt: "Una captura de pantalla de la aplicación web Comidas Reconfortantes."
 --- 
 
 **Comidas Reconfortantes** es una aplicación web limpia y moderna diseñada para ayudar a los usuarios a descubrir, explorar y guardar sus recetas favoritas. Ofrece una interfaz simple e intuitiva para encontrar inspiración culinaria.
