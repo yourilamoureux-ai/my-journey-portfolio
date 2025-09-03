@@ -1,4 +1,15 @@
 {
+  "about": {
+    "intro": {
+      "part1": "Desde gestionar",
+      "highlight1": "reclamaciones de seguros globales",
+      "part2": "en Alemania hasta arbitrar",
+      "highlight2": "peleas profesionales de MMA",
+      "part3": "por todo el mundo, mi carrera ha sido un viaje de dominio de sistemas complejos. Ahora, estoy canalizando ese mismo enfoque en mi tercer acto: reinventarme como un",
+      "highlight3": "creador de bugs profesional",
+      "part4": "(y solucionador ocasional) en El Salvador."
+    }
+  },
   "nav": {
     "home": "Inicio",
     "experience": "Experiencia",

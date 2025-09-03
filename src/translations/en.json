@@ -1,4 +1,15 @@
 {
+  "about": {
+    "intro": {
+      "part1": "From managing",
+      "highlight1": "global insurance claims",
+      "part2": "in Germany to judging",
+      "highlight2": "professional MMA fights",
+      "part3": "across the world, my career has been a journey of mastering complex systems. Now, I'm channeling that same focus into my third act: reinventing myself as a",
+      "highlight3": "professional bug creator",
+      "part4": "(and occasional fixer) in El Salvador."
+    }
+  },
   "nav": {
     "home": "Home",
     "experience": "Experience",

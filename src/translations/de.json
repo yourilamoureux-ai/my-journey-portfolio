@@ -1,4 +1,15 @@
 {
+  "about": {
+    "intro": {
+      "part1": "Von der Verwaltung",
+      "highlight1": "globaler Versicherungsansprüche",
+      "part2": "in Deutschland bis zum Richten von",
+      "highlight2": "professionellen MMA-Kämpfen",
+      "part3": "auf der ganzen Welt war meine Karriere eine Reise zur Beherrschung komplexer Systeme. Jetzt richte ich denselben Fokus auf meinen dritten Akt: mich neu zu erfinden als",
+      "highlight3": "professioneller Bug-Erzeuger",
+      "part4": "(und gelegentlicher Problemlöser) in El Salvador."
+    }
+  },
   "nav": {
     "home": "Start",
     "experience": "Erfahrung",

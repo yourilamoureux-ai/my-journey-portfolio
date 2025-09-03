@@ -6,6 +6,12 @@ import Experience from "../components/portfolio/Experience.astro";
 import NavArticle from "../components/layout/NavArticle.astro";
 import Contact from "../components/portfolio/Contact.astro";
 import Tools from "../components/portfolio/Tools.astro";
+import { useTranslations } from '@/i18n/utils.ts';
+
+const locale = Astro.currentLocale;
+const t = useTranslations(locale);
+
+// ... keep the rest of your existing code
 const { frontmatter } = Astro.props;
 ---
 
@@ -45,20 +51,20 @@ const { frontmatter } = Astro.props;
               <Heading textGradient="Youri Lamoureux" />
             </div>
 
-            <p class="text-lg max-xl:text-base text-blacktext dark:text-gray-200 mb-0 leading-8 font-semibold">
-              From managing
-              <b class="bg-linear-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">
-                global insurance claims
-              </b>
-              in Germany to judging
-              <b class="bg-linear-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">
-                professional MMA fights
-              </b>
-              across the world, my career has been a journey of mastering complex systems. Now, I'm channeling that same focus into my third act: reinventing myself as a
-              <b class="bg-linear-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">
-                professional bug creator
-              </b>
-              (and occasional fixer) in El Salvador.
+              <p class="text-lg max-xl:text-base text-blacktext dark:text-gray-200 mb-0 leading-8 font-semibold">
+                {t("about.intro.part1")}
+                <b class="bg-linear-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">
+                  {t("about.intro.highlight1")}
+                </b>
+                {t("about.intro.part2")}
+                <b class="bg-linear-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">
+                  {t("about.intro.highlight2")}
+                </b>
+                {t("about.intro.part3")}
+                <b class="bg-linear-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text">
+                  {t("about.intro.highlight3")}
+                </b>
+                {t("about.intro.part4")}
             </p>
           </div>
         </div>

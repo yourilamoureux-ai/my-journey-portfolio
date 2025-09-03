@@ -1,4 +1,15 @@
 {
+  "about": {
+    "intro": {
+      "part1": "De la gestion des",
+      "highlight1": "sinistres d'assurance mondiaux",
+      "part2": "en Allemagne à l'arbitrage de",
+      "highlight2": "combats professionnels de MMA",
+      "part3": "à travers le monde, ma carrière a été un parcours de maîtrise de systèmes complexes. Maintenant, je canalise cette même concentration dans mon troisième acte : me réinventer en tant que",
+      "highlight3": "créateur de bogues professionnel",
+      "part4": "(et réparateur occasionnel) au Salvador."
+    }
+  },
   "nav": {
     "home": "Accueil",
     "experience": "Expérience",
