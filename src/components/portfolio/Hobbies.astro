@@ -1,10 +1,17 @@
 ---
-import { getCollection } from "astro:content";
+// 1. Using a direct relative path for the import to be more robust.
+import { useTranslations } from '../../i18n/utils.ts';
 import Hobbie from "./Hobbie.astro";
 
-const [staticData] = await getCollection("staticData");
-const { hobbies } = staticData.data;
+const locale = Astro.currentLocale;
+const t = useTranslations(locale);
 
+// 2. This is the key improvement: a safe runtime check.
+const hobbiesData = t('home.hobbies.items');
+// We check if the data is an array. If not, we use an empty array to prevent crashes.
+const hobbies: string[] = Array.isArray(hobbiesData) ? hobbiesData : [];
+
+// All of your existing variant logic is preserved.
 interface Props {
     variant?: "default" | "vertical";
 }
@@ -21,5 +28,5 @@ const classes = variants[variant];
 ---
 
 <div id="tags" class={classes}>
-    {staticData.data.hobbies.map((hobby) => <Hobbie tag={hobby} />)}
+    {hobbies.map((hobby) => <Hobbie tag={hobby} />)}
 </div>

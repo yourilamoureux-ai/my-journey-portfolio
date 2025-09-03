@@ -53,7 +53,14 @@
       "story_button": "Meine Geschichte"
     },
     "hobbies": {
-      "heading": "Jenseits des Codes"
+      "heading": "Jenseits des Codes",
+      "items": [
+        "Kochen",
+        "Gemischte Kampfkünste",
+        "Filme & Fernsehserien",
+        "Die Natur genießen",
+        "Reisen & kulturelle Abenteuer"
+      ]
     },
     "tech": {
       "heading": "Tech-",

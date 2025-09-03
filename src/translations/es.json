@@ -53,8 +53,15 @@
       "story_button": "Mi historia"
     },
     "hobbies": {
-      "heading": "Más allá del código"
-    },
+      "heading": "Más allá del código",
+      "items": [
+        "Cocina",
+        "Artes Marciales Mixtas",
+        "Películas y Series de TV",
+        "Disfrutar de la naturaleza",
+        "Viajes y aventuras culturales"
+      ]
+    },  
     "tech": {
       "heading": "Stack",
       "subheading": "Tecnológico"

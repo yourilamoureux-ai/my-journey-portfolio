@@ -53,7 +53,14 @@
       "story_button": "My Story"
     },
     "hobbies": {
-      "heading": "Beyond the Code"
+      "heading": "Beyond the Code",
+      "items": [
+        "Cooking",
+        "Mixed Martial Arts",
+        "Movies & TV Series",
+        "Enjoying nature",
+        "Travel & cultural adventures"
+      ]
     },
     "tech": {
       "heading": "Tech",
