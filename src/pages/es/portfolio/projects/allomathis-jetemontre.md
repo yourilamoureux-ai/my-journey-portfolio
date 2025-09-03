@@ -5,8 +5,8 @@ pubDate: 2025-06-30
 description: 'Una aplicación web educativa e interactiva para que mis sobrinos lean cuentos para dormir.'
 languages: ["html", "css", "javascript", "netlify"]
 image:
-  url: "/images/projects/allomathis.png"
-  alt: "Una captura de pantalla de la aplicación web 'Hola, Mathis, te muestro' que muestra una página."
+  url: "/images/projects/allomathis.png"
+  alt: "Una captura de pantalla de la aplicación web 'Hola, Mathis, te muestro' que muestra una página."
 --- 
 
 **Hola Mathis, te muestro...** es una sencilla aplicación de cuentos web que construí para mis sobrinos. El objetivo era crear una forma divertida e interactiva para que leyeran cuentos juntos antes de dormir. Este proyecto fue un paso fundamental en mi viaje de reinvención en El Salvador.

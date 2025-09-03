@@ -5,8 +5,8 @@ pubDate: 2025-05-29
 description: 'Eine Web-App zum Entdecken und Speichern Ihrer Lieblings-Comfort-Food-Rezepte, erstellt mit React und Firebase.'
 languages: ["react", "ts", "vite", "tailwind", "firebase"]
 image:
-  url: "/images/projects/comfort-food.png"
-  alt: "Ein Screenshot der Comfort Food Mahlzeiten Web-App."
+  url: "/images/projects/comfort-food.png"
+  alt: "Ein Screenshot der Comfort Food Mahlzeiten Web-App."
 --- 
 
 **Comfort Food Mahlzeiten** ist eine saubere, moderne Webanwendung, die Benutzern hilft, ihre Lieblingsrezepte zu entdecken, zu durchsuchen und zu speichern. Sie bietet eine einfache, intuitive Benutzeroberfläche, um Kochinspiration zu finden.
