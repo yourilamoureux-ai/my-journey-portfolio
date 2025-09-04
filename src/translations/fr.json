@@ -2,12 +2,12 @@
   "about": {
     "intro": {
       "part1": "De la gestion des",
-      "highlight1": "sinistres d'assurance mondiaux",
-      "part2": "en Allemagne à l'arbitrage de",
+      "highlight1": "sinistres d'assurance transport de marchandises",
+      "part2": "en Allemagne à juge de",
       "highlight2": "combats professionnels de MMA",
-      "part3": "à travers le monde, ma carrière a été un parcours de maîtrise de systèmes complexes. Maintenant, je canalise cette même concentration dans mon troisième acte : me réinventer en tant que",
+      "part3": "à travers en Russie et à travers le monde, ma carrière a été un voyage au cœur de systèmes complexes. Aujourd’hui, je mets cette même rigueur au service de mon troisième acte : me réinventer en tant que",
       "highlight3": "créateur de bogues professionnel",
-      "part4": "(et réparateur occasionnel) au Salvador."
+      "part4": "(et débogueur occasionnel) au Salvador."
     }
   },
   "nav": {
@@ -79,11 +79,11 @@
       "status": "Ouvert à la collaboration",
       "name": "Youri Lamoureux",
       "title": "Vibe Coder & Créateur de bogues professionnel",
-      "bio_part1": "dans un parcours de réinvention au Salvador après des carrières internationales dans l'assurance de fret maritime et l'arbitrage de MMA. J'apprends",
-      "bio_highlight": "l'IA Générative en public",
-      "bio_part2": "pour que d'autres puissent explorer, échouer et grandir avec moi.",
+      "bio_part1": "dans un parcours de (ré)invention au Salvador après une carrière internationale en assurance maritime et transports et en tant que juge professionel d'Arts Martiaux Mixtes (MMA). J'explore",
+      "bio_highlight": "maintenant l'IA générative.",
+      "bio_part2": "Je documente tout en public pour permettre à chacun d'apprendre de mon parcours, avec les hauts et les bas.",
       "story_button": "Mon histoire",
-      "page_title": "Youri Lamoureux | Parcours de Réinvention",
+      "page_title": "Youri Lamoureux | Parcours de (Ré)invention",
       "page_description": "Découvrez les projets, l'expérience et l'histoire de Youri Lamoureux, apprenant l'IA Générative et construisant en public."
     },
     "hobbies": {
@@ -92,7 +92,7 @@
         "Cuisine",
         "Arts Martiaux Mixtes",
         "Films & Séries TV",
-        "Profiter de la nature",
+        "Nature",
         "Voyages & aventures culturelles"
       ]
     },
@@ -123,25 +123,25 @@
       {
         "date": "2024 - 2025",
         "title": "Assurance et assistance voyage",
-        "description": "Fourni une assistance médicale d'urgence et une coordination pour les voyageurs, gérant et traitant les demandes d'assurance.",
+        "description": "Gestion d’urgences médicales et coordination logistique pour les voyageurs incluant l’analyse et le traitement des dossiers d’assurance.",
         "alignment": "left"
       },
       {
         "date": "2013 - 2023",
         "title": "Assurance transport de marchandises",
-        "description": "Évolué vers des postes de direction, gérant des sinistres internationaux complexes et un réseau mondial d'experts.",
+        "description": "Responsable sénior de dossiers de sinistres internationaux complexes et développement d’un réseau mondial d’experts en assurance cargo, avec évolution vers des fonctions de direction.",
         "alignment": "left"
       },
       {
         "date": "2013 - 2021",
         "title": "Juge et juge-instructeur professionnel de MMA",
-        "description": "Arbitré pour les plus grandes promotions de MMA en Eurasie et formé la nouvelle génération de juges.",
+        "description": "Juge officiel pour des promotions majeures (ACA MMA, M-1 Global, German MMA Championship, etc) en Eurasie et formateur international de juges professionnels.",
         "alignment": "right"
       },
       {
         "date": "2005 - 2011",
-        "title": "Service à la clientèle et supervision",
-        "description": "Construit une carrière fondamentale dans les relations clients, évoluant vers un rôle de superviseur pour résoudre les plaintes escaladées.",
+        "title": "Service client et supervision",
+        "description": "Développement d'une solide expérience en relation clientèle, puis passage à un rôle de superviseur chargé de la résolution de dossiers complexes et de plaintes escaladées.",
         "alignment": "left"
       }
     ]
