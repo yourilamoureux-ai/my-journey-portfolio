@@ -5,9 +5,24 @@ import HeroIndex from "../components/portfolio/HeroIndex.astro";
 import Contact from "../components/portfolio/Contact.astro";
 import ListProjects from "../components/portfolio/ListProjects.astro";
 import { getCollection } from "astro:content";
+import { useTranslations } from "@/i18n/utils.ts";
 
+// Determine locale from path
+const allLocales = ["en", "fr", "de", "es"];
+const pathname = Astro.url.pathname;
+const firstSegment = pathname.split("/")[1];
+const locale = allLocales.includes(firstSegment) ? firstSegment : "en";
+
+// Translation function
+const t = useTranslations(locale);
+
+// Static data
 const [staticData] = await getCollection("staticData");
-const { pageTitle, pageDescription, OGImage } = staticData.data;
+const OGImage = staticData.data.fallbackImage;
+
+// Page title and description from translations
+const pageTitle = t("home.hero.page_title");
+const pageDescription = t("home.hero.page_description");
 ---
 
 <Layout
