@@ -2,8 +2,8 @@
 import Button from "../ui/Button.astro";
 import Heading from "../ui/Heading.astro";
 import Tools from "../portfolio/Tools.astro";
-import { Icon } from "astro-icon/components";
 import Hobbies from "../portfolio/Hobbies.astro";
+import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
 import { useTranslations } from "@/i18n/utils.ts";
 
@@ -11,19 +11,18 @@ const allLocales = ["en", "fr", "de", "es"];
 const pathname = Astro.url.pathname;
 const firstSegment = pathname.split("/")[1];
 const locale = allLocales.includes(firstSegment) ? firstSegment : "en";
-
 const t = useTranslations(locale);
 
-// Get global static data
+// Global static data
 const [staticData] = await getCollection("staticData");
 const { email, emailIconName, github } = staticData.data;
 
-// Hero-specific texts come from translations
+// Hero texts & images
 const profileAlt = t("home.hero.profile_alt");
 const profileName = t("home.hero.name");
 const profileTitle = t("home.hero.title");
-const profileLink = "/"; // adjust if your profile links elsewhere
-const portfolioImage = "/images/portfolio.png"; // optional fallback
+const profileLink = "/";
+const portfolioImage = "/images/portfolio.png"; // fallback
 const contactSectionButtonText = t("home.hero.story_button");
 ---
 
@@ -32,58 +31,42 @@ const contactSectionButtonText = t("home.hero.story_button");
   id="home"
   aria-label={t("home.hero.aria_label")}
 >
-  <div
-    class="mx-auto mb-4 h-96 w-full max-w-7xl rounded-2xl bg-linear-to-r from-mint-300 dark:from-mint-600 to-mint-50 dark:to-mint-200/5 hover:to-mint-300/30 dark:hover:to-mint-600/30 p-[.2rem] max-md:h-auto"
-  >
-    <div
-      class="group relative z-0 flex h-full items-center justify-center gap-8 overflow-hidden rounded-2xl bg-linear-to-tr from-riptide-100 to-white p-4 transition-all hover:shadow-[0_10px_50px_rgba(13,188,130,0.2)] dark:bg-linear-to-r dark:from-mint-950 dark:to-zinc-950 dark:overflow-hidden max-md:w-full max-md:gap-3 max-lg:gap-2 max-sm:flex-col dark:before:bg-[radial-gradient(circle,rgba(13,188,130)_0,rgba(1,45,34)_100%)] before:bg-[radial-gradient(circle,rgba(95,255,202)_0,rgba(144,253,210)_100%)] before:absolute before:left-65 before:top-10 before:h-[40%] before:aspect-square before:rounded-full before:blur-3xl before:opacity-80 before:-z-10 before:transition hover:before:animate-pulse"
-    >
+  <!-- Hero Card -->
+  <div class="mx-auto mb-4 h-96 w-full max-w-7xl rounded-2xl bg-linear-to-r from-mint-300 dark:from-mint-600 to-mint-50 dark:to-mint-200/5 hover:to-mint-300/30 dark:hover:to-mint-600/30 p-[.2rem] max-md:h-auto">
+    <div class="group relative z-0 flex h-full items-center justify-center gap-8 overflow-hidden rounded-2xl bg-linear-to-tr from-riptide-100 to-white p-4 transition-all hover:shadow-[0_10px_50px_rgba(13,188,130,0.2)] dark:bg-linear-to-r dark:from-mint-950 dark:to-zinc-950 max-md:w-full max-md:gap-3 max-sm:flex-col">
+      <!-- Profile image -->
       <div class="aspect-square h-4/5 max-md:size-32">
-        <div
-          class="group-hover:scale-105 relative z-10 flex w-full cursor-pointer items-center overflow-hidden rounded-full p-[2px] transition-all duration-500"
-        >
-          <div
-            class="absolute inset-0 h-full w-full rounded-fullfrom-transparent to-riptide-500 dark:from-transparent f dark:to-mint-300 animate-rotate-border bg-conic/[from_var(--border-angle)]"
-          ></div>
+        <div class="group-hover:scale-105 relative z-10 flex w-full cursor-pointer items-center overflow-hidden rounded-full p-[2px] transition-all duration-500">
           <div class="relative z-20 flex w-full rounded-full bg-mint-900">
             <div
               class="w-full aspect-square rounded-full bg-center bg-cover"
               style={`background-image: url(${portfolioImage})`}
               aria-label={profileAlt}
             >
-              <a
-                href={profileLink}
-                class="flex h-full w-full"
-                aria-label={t("home.hero.profile_link_aria")}
-              ></a>
+              <a href={profileLink} class="flex h-full w-full" aria-label={t("home.hero.profile_link_aria")}></a>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- Hero texts -->
       <div class="flex h-full w-7/12 flex-col justify-center gap-4 p-4 max-md:w-full max-md:gap-2">
-        <span
-          class="relative inline-flex items-center text-xs font-semibold leading-0 dark:text-white text-blacktext max-md:font-medium max-sm:justify-center"
-        >
-          <span
-            class="before:mr-2 before:block before:h-1.5 before:w-1.5 before:rounded-full before:bg-green-400 before:shadow-[0px_0px_0px_3px_rgba(34,197,94,0.5)] before:animate-pulse before:content-['']"
-          ></span>
+        <span class="relative inline-flex items-center text-xs font-semibold leading-0 dark:text-white text-blacktext max-md:font-medium max-sm:justify-center">
+          <span class="before:mr-2 before:block before:h-1.5 before:w-1.5 before:rounded-full before:bg-green-400 before:shadow-[0px_0px_0px_3px_rgba(34,197,94,0.5)] before:animate-pulse before:content-['']"></span>
           {t("home.hero.status")}
         </span>
 
-        <h1
-          class="text-4xl font-black leading-none text-blacktext dark:text-white max-xl:text-3xl max-lg:text-2xl max-sm:text-center"
-        >
+        <h1 class="text-4xl font-black leading-none text-blacktext dark:text-white max-xl:text-3xl max-lg:text-2xl max-sm:text-center">
           {profileName} 👋
         </h1>
-        
+
         <p class="mb-0 text-lg font-semibold leading-8 text-blacktext dark:text-gray-200 max-xl:text-base">
-          <span
-            class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200"
-          >{profileTitle}</span> {t("home.hero.bio_part1")} 
-          <span
-            class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200"
-          >{t("home.hero.bio_highlight")}</span> {t("home.hero.bio_part2")}
+          <span class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200">
+            {profileTitle}
+          </span> {t("home.hero.bio_part1")}
+          <span class="bg-linear-to-r from-riptide-500 to-mint-500 bg-clip-text font-black text-transparent dark:from-riptide-300 dark:to-mint-200">
+            {t("home.hero.bio_highlight")}
+          </span> {t("home.hero.bio_part2")}
         </p>
 
         <div class="flex gap-4 max-sm:flex-col max-sm:items-center">
@@ -94,6 +77,10 @@ const contactSectionButtonText = t("home.hero.story_button");
     </div>
   </div>
 
-  <!-- Rest of your grid content (Hobbies, Tools, GitHub promo, Projects promo) stays unchanged -->
-  <!-- Just make sure hero texts/images above use the t() variables instead of destructured staticData -->
+  <!-- Cards below Hero -->
+  <div class="mt-8 grid grid-cols-3 gap-6 max-md:grid-cols-1">
+    <Hobbies />
+    <Tools />
+    <!-- You can add a Projects promo or GitHub card component here -->
+  </div>
 </section>
