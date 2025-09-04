@@ -28,7 +28,15 @@
     "site_footer_aria_label": "Site footer",
     "nav_aria_label": "Footer navigation",
     "about_development_aria_label": "About the website development",
-    "social_links_aria_label": "Social media links"
+    "social_links_aria_label": "Social media links",
+    "socials": {
+      "email": "Send an email",
+      "instagram": "Visit on Instagram",
+      "x": "Visit on X",
+      "youtube": "Visit on YouTube",
+      "github": "Visit on GitHub",
+      "linkedin": "Visit on LinkedIn"
+    }
   },
   "contact": {
     "title": "Always Open to Connect",
@@ -55,6 +63,12 @@
         "previous": "Previous Post",
         "next": "Next Post"
       }
+    },
+    "tags_page": {
+      "title_prefix": "Posts about"
+    },
+    "techs_page": {
+      "title_prefix": "Posts using"
     }
   },
   "home": {

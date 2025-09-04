@@ -1,36 +1,20 @@
 {
-  "profileImage": "/images/profile.png",
-  "profileAlt": "Photo of Youri Lamoureux, Canadian-born creator on a journey of reinvention in El Salvador",
-  "profileLink": "/about-me",
-  "profileTitle": "Vibe Coder & Professional Bug Creator",
-  "profileName": "Youri Lamoureux",
-  "portfolioImage": "/images/portfolio.png",
   "email": "yourilamoureux1985@hotmail.com",
   "x": "https://x.com/youri_lamoureux",
   "instagram": "https://www.instagram.com/youri.lamoureux",
-  "contactSectionTitle": "Always Open to Connect",
-  "contactSectionSubtitle": "Got an idea, project, or just want to swap stories?<br> Drop me a message.",
-  "contactSectionButtonText": "Contact Me",
-  "contactSectionButtonIcon": "paperplane",
-  "techsTitle": "TECHS",
-  "instagramIconName": "instagram",
-  "emailIconName": "envelope",
+  "github": "https://github.com/yourilamoureux-ai/my-journey-portfolio",
+  "linkedin": null,
+  "youtube": null,
+
+  "contactSectionButtonIcon": "envelope",
   "xIconName": "x",
-  "hobbies": [
-    "Cooking",
-    "Mixed Martial Arts",
-    "Movies & TV Series",
-    "Enjoy nature",
-    "Travel & cultural adventures"
-  ],
-  "pageTitle": "Youri Lamoureux | Reinventing in Tech",
-  "pageDescription": "The personal site of Youri Lamoureux, a Canadian reinventing himself in tech while documenting the journey. Expect projects, experiments, and reflections on learning, family, and creativity.",
-  "OGImage": {
-    "url": "/images/imagedefault.webp",
-    "alt": "Screenshot of a web portfolio the personal portfolio of Youri Lamoureux. A dark, modern design that highlights his journey of reinvention in tech, projects in web development, and an authentic blog about learning, family, and creativity."
-  },
+  "instagramIconName": "instagram",
+  "githubIconName": "github",
+  "linkedinIconName": null,
+  "youtubeIconName": null,
+  "emailIconName": "envelope",
+  
   "fallbackImage": {
-    "url": "/images/fallback.webp",
-    "alt": "Generic fallback image used when no project or blog image is available."
+    "url": "/images/fallback.webp"
   }
 }

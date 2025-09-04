@@ -28,7 +28,15 @@
     "site_footer_aria_label": "Fußzeile der Website",
     "nav_aria_label": "Fußzeilen-Navigation",
     "about_development_aria_label": "Über die Entwicklung der Website",
-    "social_links_aria_label": "Social-Media-Links"
+    "social_links_aria_label": "Social-Media-Links",
+    "socials": {
+      "email": "Eine E-Mail senden",
+      "instagram": "Auf Instagram besuchen",
+      "x": "Auf X besuchen",
+      "youtube": "Auf YouTube besuchen",
+      "github": "Auf GitHub besuchen",
+      "linkedin": "Auf LinkedIn besuchen"
+    }
   },
   "contact": {
     "title": "Immer offen für Austausch",

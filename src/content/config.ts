@@ -1,19 +1,17 @@
 // src/content/config.ts
 import { defineCollection, z } from 'astro:content';
 
-// 1. Blog collection schema
+// 1. Blog collection schema (no changes needed here)
 const blogCollection = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
     author: z.string(),
     description: z.string(),
-    image: z
-      .object({
+    image: z.object({
         url: z.string(),
         alt: z.string(),
-      })
-      .optional(),
+      }).optional(),
     pubDate: z.date(),
     draft: z.boolean().optional(),
     tags: z.array(z.string()),
@@ -21,39 +19,30 @@ const blogCollection = defineCollection({
   }),
 });
 
-// 2. Static data schema
+// 2. Static data schema (now cleaned up)
 const staticDataCollection = defineCollection({
   type: 'data',
   schema: z.object({
-    profileImage: z.string(),
-    profileAlt: z.string(),
-    profileLink: z.string(),
-    profileTitle: z.string(),
-    profileName: z.string(),
-    portfolioImage: z.string(),
+    // Site-wide settings and links that don't need translation
     email: z.string().email(),
     x: z.string().url().optional(),
     instagram: z.string().url().optional(),
     linkedin: z.string().url().optional(),
     youtube: z.string().url().optional(),
-    contactSectionTitle: z.string(),
-    contactSectionSubtitle: z.string(),
-    contactSectionButtonText: z.string(),
+    github: z.string().url().optional(),
+
+    // Icon names (these are tied to code, not language)
     contactSectionButtonIcon: z.string(),
-    techsTitle: z.string(),
-    instagramIconName: z.string(),
-    emailIconName: z.string(),
-    xIconName: z.string(),
-    hobbies: z.array(z.string()),
-    pageTitle: z.string(),
-    pageDescription: z.string(),
-    OGImage: z.object({
-      url: z.string(),
-      alt: z.string(),
-    }),
+    instagramIconName: z.string().optional(),
+    emailIconName: z.string().optional(),
+    xIconName: z.string().optional(),
+    linkedinIconName: z.string().optional(),
+    youtubeIconName: z.string().optional(),
+    githubIconName: z.string().optional(),
+    
+    // Image paths
     fallbackImage: z.object({
       url: z.string(),
-      alt: z.string(),
     }),
   }),
 });

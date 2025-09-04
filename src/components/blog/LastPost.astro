@@ -1,40 +1,37 @@
 ---
-import { getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from 'astro:content';
 import Tag from "../ui/Tag.astro";
 import ReadMore from "../ui/ReadMore.astro";
 import Capsule from "../ui/Capsule.astro";
 import DatePub from "./DatePub.astro";
-import allStaticData from "../../content/staticdata/AllStaticData.json";
 
-const locale = Astro.currentLocale;
+// Use Astro's built-in locale for simplicity
+const locale = Astro.currentLocale ?? 'en';
 
-// Load fallback from static data
-const fallbackImage = allStaticData.fallbackImage;
+// 1. Fetch static data (like the fallback image) using getCollection for consistency
+const [staticData] = await getCollection("staticData");
+const fallbackImage = staticData.data.fallbackImage;
 
-// Fetch posts for the current language
-const allPostsForLocale = await getCollection('blog', ({ id }) => {
-  if (locale === 'en') {
-    return !['fr/', 'de/', 'es/'].some(lang => id.startsWith(lang));
-  }
-  return id.startsWith(locale + '/');
-});
+// 2. Fetch posts for the current language from the content collection
+const allPostsForLocale = await getCollection('blog', ({ id }) => id.startsWith(locale + '/'));
 
 // Filter drafts and sort to find the latest post
 const publishedPosts = allPostsForLocale
   .filter(post => (import.meta.env.PROD ? !post.data.draft : true))
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
-const latestPost = publishedPosts[0];
+const latestPost: CollectionEntry<'blog'> | undefined = publishedPosts[0];
 ---
 
 {latestPost &&
   (() => {
     const { title, pubDate, tags = [], languages = [], image } = latestPost.data;
 
-    // Use fallback if image is missing
-    const finalImage = image?.url ? image : fallbackImage;
-
+    // Use the post's image if it exists, otherwise use the global fallback
+    const finalImage = image || fallbackImage;
     const imageAlt = finalImage.alt || title;
+
+    // Construct the correct, language-aware URL
     const langPrefix = locale === 'en' ? '' : `/${locale}`;
     const postUrl = `${langPrefix}/blog/posts/${latestPost.slug.split('/')[1]}`;
 
@@ -56,7 +53,8 @@ const latestPost = publishedPosts[0];
           </div>
           <a href={postUrl} class="text-mint-50 gap-3 h-full flex items-end max-sm:px-6 rounded-lg transition-all" aria-label={`Read article: ${title}`}>
             <div class="gap-3 flex flex-col justify-end drop-shadow-[1px_6px_1px_rgba(0,0,0,0.3)]">
-              <DatePub date={pubDate} class="text-mint-50" />
+              {/* 3. Pass the locale to the DatePub component for correct formatting */}
+              <DatePub date={pubDate} locale={locale} class="text-mint-50" />
               <h2 id="post-title" class="text-4xl max-xl:text-3xl max-sm:text-2xl font-bold">
                 <span>{title}</span>
               </h2>

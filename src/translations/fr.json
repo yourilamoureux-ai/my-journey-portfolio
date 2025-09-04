@@ -28,7 +28,15 @@
     "site_footer_aria_label": "Pied de page du site",
     "nav_aria_label": "Navigation du pied de page",
     "about_development_aria_label": "À propos du développement du site",
-    "social_links_aria_label": "Liens de médias sociaux"
+    "social_links_aria_label": "Liens de médias sociaux",
+    "socials": {
+      "email": "Envoyer un e-mail",
+      "instagram": "Visiter sur Instagram",
+      "x": "Visiter sur X",
+      "youtube": "Visiter sur YouTube",
+      "github": "Visiter sur GitHub",
+      "linkedin": "Visiter sur LinkedIn"
+    }
   },
   "contact": {
     "title": "Toujours ouvert à la discussion",
