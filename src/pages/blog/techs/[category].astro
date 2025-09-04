@@ -1,55 +1,54 @@
 ---
-import Layout from "../../../layouts/Layout.astro";
-import BlogPost from "../../../components/blog/BlogPost.astro";
-import Heading from "../../../components/ui/Heading.astro";
-import type { MarkdownInstance } from 'astro';
+import { getCollection } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+import BlogPost from '../../../components/blog/BlogPost.astro';
+import Heading from '../../../components/ui/Heading.astro';
+import { useTranslations } from '@/i18n/utils.ts';
 
-interface Frontmatter {
-  languages: string[];
-  title: string;
-  pubDate: string;
-  tags: string[];
-  image: string;
-}
-export async function getStaticPaths(): Promise<Array<{params: {category: string}, props: {posts: MarkdownInstance<Frontmatter>[]}}>>{
-  const allPosts: MarkdownInstance<Frontmatter>[] = await Astro.glob<Frontmatter>("../posts/*.md");
+const locale = Astro.currentLocale ?? 'en';
+const t = useTranslations(locale);
 
-  const uniqueTags: string[] = [
-    ...new Set(allPosts.map((post: MarkdownInstance<Frontmatter>) => post.frontmatter.languages).flat()),
-  ];
+// This function finds all unique 'languages' (techs) and tells Astro to create a page for each.
+export async function getStaticPaths() {
+  const allPosts = await getCollection('blog');
+  const publishedPosts = allPosts.filter(post => !post.data.draft);
+  const allLanguages = publishedPosts.map(post => post.data.languages).flat();
+  const uniqueLanguages = [...new Set(allLanguages)];
 
-  return uniqueTags.map((category) => {
-    const filteredPosts = allPosts.filter((post) =>
-      post.frontmatter.languages.includes(category)
-    );
+  return uniqueLanguages.map(lang => {
     return {
-      params: { category },
-      props: { posts: filteredPosts },
+      params: { category: lang },
     };
   });
 }
 
 const { category } = Astro.params;
-const { posts } = Astro.props;
+
+// Fetch only the posts for the current language that include this specific tech.
+const allPostsForLocale = await getCollection('blog', ({ id }) => id.startsWith(locale + '/'));
+const filteredPosts = allPostsForLocale.filter(post => 
+  post.data.languages.includes(category) && (import.meta.env.PROD ? !post.data.draft : true)
+);
+
+const langPrefix = locale === 'en' ? '' : `/${locale}`;
 ---
 
-<Layout pageTitle={category} >
-  <section class="py-8">
+<Layout pageTitle={`${t('blog.techs_page.title_prefix')} "${category}"`}>
+  <section class="py-16 px-8 max-sm:px-4">
     <div class="flex flex-col gap-8 max-w-4xl mx-auto">
-      <Heading text="Posts about" textGradient={category}  />
-
-      {
-        posts.map((post) => (
-          <BlogPost
-            url={post.url}
-            title={post.frontmatter.title}
-            date={post.frontmatter.pubDate}
-            tags={post.frontmatter.tags}
-            languages={post.frontmatter.languages}
-            image={post.frontmatter.image}
-          />
-        ))
-      }
+      <div class="text-center">
+        <Heading text={t('blog.techs_page.title_prefix')} textGradient={category} />
+      </div>
+      {filteredPosts.map((post) => (
+        <BlogPost
+          url={`${langPrefix}/blog/posts/${post.slug.split('/')[1]}`}
+          title={post.data.title}
+          date={post.data.pubDate}
+          tags={post.data.tags}
+          languages={post.data.languages}
+          image={post.data.image}
+        />
+      ))}
     </div>
   </section>
 </Layout>

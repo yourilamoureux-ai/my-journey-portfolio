@@ -36,8 +36,32 @@
     "button": "Kontakt"
   },
   "blog": {
+    "page": {
+      "title": "Der Blog | Youri Lamoureuxs Reise der Neuerfindung",
+      "description": "Meine Reise der Neuerfindung in El Salvador. Folgen Sie mir, während ich 'vibe code', Generative KI lerne und die Erfolge und Lehren des öffentlichen Bauens teile.",
+      "ogAlt": "Der Blog von Youri Lamoureux, der den Titel 'Eine Reise der Neuerfindung' über einem dunklen, technischen Hintergrund mit grünen Akzenten zeigt."
+    },
     "categories": "Kategorien",
-    "technologies": "Technologien"
+    "technologies": "Technologien",
+    "view_all_posts": "Alle Beiträge ansehen...",
+    "all_posts": {
+      "heading": "Alle",
+      "subheading": "Beiträge"
+    },
+    "post": {
+      "author_photo_alt": "Foto des Blog-Autors",
+      "article_image_fallback_alt": "Artikelbild",
+      "nav": {
+        "previous": "Vorheriger Beitrag",
+        "next": "Nächster Beitrag"
+      }
+    },
+    "tags_page": {
+      "title_prefix": "Beiträge über"
+    },
+    "techs_page": {
+      "title_prefix": "Beiträge mit"
+    }
   },
   "home": {
     "hero": {

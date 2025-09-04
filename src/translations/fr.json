@@ -36,8 +36,32 @@
     "button": "Contactez-moi"
   },
   "blog": {
+    "page": {
+      "title": "Le Blog | Le parcours de réinvention de Youri Lamoureux",
+      "description": "Mon parcours de réinvention au Salvador. Suivez-moi alors que je 'vibe code', apprends l'IA Générative et partage les succès et les leçons de la construction en public.",
+      "ogAlt": "Le blog de Youri Lamoureux, montrant le titre 'Un parcours de réinvention' sur un fond sombre et technique avec des accents verts."
+    },
     "categories": "Catégories",
-    "technologies": "Technologies"
+    "technologies": "Technologies",
+    "view_all_posts": "Afficher tous les articles...",
+    "all_posts": {
+      "heading": "Tous les",
+      "subheading": "Articles"
+    },
+    "post": {
+      "author_photo_alt": "Photo de l'auteur du blog",
+      "article_image_fallback_alt": "Image de l'article",
+      "nav": {
+        "previous": "Article précédent",
+        "next": "Article suivant"
+      }
+    },
+    "tags_page": {
+      "title_prefix": "Articles sur"
+    },
+    "techs_page": {
+      "title_prefix": "Articles utilisant"
+    }
   },
   "home": {
     "hero": {

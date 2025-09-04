@@ -2,18 +2,21 @@
 import Layout from "../../../layouts/Layout.astro";
 import Tags from "../../../components/blog/Tags.astro";
 import Heading from "../../../components/ui/Heading.astro";
+import { useTranslations } from '@/i18n/utils.ts';
 
-const pageTitle = "Tags";
+const locale = Astro.currentLocale;
+const t = useTranslations(locale);
 
-
-
+const pageTitle = t('blog.categories');
 ---
 
-<Layout pageTitle={pageTitle} >
-  <section class="py-8">
-    <div class="flex flex-col gap-8 max-w-3xl mx-auto">
-      <Heading text="Tags"  />
-      <Tags variant="vertical" />
+<Layout pageTitle={pageTitle}>
+  <section class="py-16 px-8 max-sm:px-4">
+    <div class="flex flex-col gap-8 max-w-4xl mx-auto">
+      <div class="text-center">
+        <Heading textGradient={pageTitle} />
+      </div>
+      <Tags variant="default" />
     </div>
   </section>
 </Layout>

@@ -2,19 +2,21 @@
 import Layout from "../../../layouts/Layout.astro";
 import Languages from "../../../components/blog/Languages.astro";
 import Heading from "../../../components/ui/Heading.astro";
+import { useTranslations } from '@/i18n/utils.ts';
 
-const pageTitle = "Technologies"; // Fixed: Title was "Languages" but heading shows "Technologies"
-const allPosts = await Astro.glob("../posts/*.md");
-const languages = [
-    ...new Set(allPosts.map((post) => post.frontmatter.languages).flat()),
-];
+const locale = Astro.currentLocale;
+const t = useTranslations(locale);
+
+const pageTitle = t('blog.technologies');
 ---
 
 <Layout pageTitle={pageTitle}>
-    <section class="py-8">
-        <div class="flex flex-col gap-8 max-w-3xl mx-auto">
-            <Heading text="Technologies" />
-            <Languages variant="vertical" languages={languages} /> <!-- Fixed: Missing languages prop -->
-        </div>
-    </section>
+  <section class="py-16 px-8 max-sm:px-4">
+    <div class="flex flex-col gap-8 max-w-4xl mx-auto">
+      <div class="text-center">
+        <Heading textGradient={pageTitle} />
+      </div>
+      <Languages variant="default" />
+    </div>
+  </section>
 </Layout>

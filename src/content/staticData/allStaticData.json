@@ -6,7 +6,7 @@
   "profileName": "Youri Lamoureux",
   "portfolioImage": "/images/portfolio.png",
   "email": "yourilamoureux1985@hotmail.com",
-  "x": "https://x.com/youri_lamoureux", 
+  "x": "https://x.com/youri_lamoureux",
   "instagram": "https://www.instagram.com/youri.lamoureux",
   "contactSectionTitle": "Always Open to Connect",
   "contactSectionSubtitle": "Got an idea, project, or just want to swap stories?<br> Drop me a message.",
@@ -28,5 +28,9 @@
   "OGImage": {
     "url": "/images/imagedefault.webp",
     "alt": "Screenshot of a web portfolio the personal portfolio of Youri Lamoureux. A dark, modern design that highlights his journey of reinvention in tech, projects in web development, and an authentic blog about learning, family, and creativity."
+  },
+  "fallbackImage": {
+    "url": "/images/fallback.webp",
+    "alt": "Generic fallback image used when no project or blog image is available."
   }
 }

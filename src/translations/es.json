@@ -36,8 +36,32 @@
     "button": "Contáctame"
   },
   "blog": {
+    "page": {
+      "title": "El Blog | El viaje de reinvención de Youri Lamoureux",
+      "description": "Mi viaje de reinvención en El Salvador. Sigue mi progreso mientras 'vibe code', aprendo IA Generativa y comparto las victorias y lecciones de construir en público.",
+      "ogAlt": "El blog de Youri Lamoureux, mostrando el título 'Un viaje de reinvención' sobre un fondo oscuro y técnico con acentos verdes."
+    },
     "categories": "Categorías",
-    "technologies": "Tecnologías"
+    "technologies": "Tecnologías",
+    "view_all_posts": "Ver todos los posts...",
+    "all_posts": {
+      "heading": "Todos los",
+      "subheading": "Posts"
+    },
+    "post": {
+      "author_photo_alt": "Foto del autor del blog",
+      "article_image_fallback_alt": "Imagen del artículo",
+      "nav": {
+        "previous": "Post anterior",
+        "next": "Post siguiente"
+      }
+    },
+    "tags_page": {
+      "title_prefix": "Posts sobre"
+    },
+    "techs_page": {
+      "title_prefix": "Posts usando"
+    }
   },
   "home": {
     "hero": {
@@ -61,7 +85,7 @@
         "Disfrutar de la naturaleza",
         "Viajes y aventuras culturales"
       ]
-    },  
+    },
     "tech": {
       "heading": "Stack",
       "subheading": "Tecnológico"

@@ -2,17 +2,13 @@
 import BlogPost from "./BlogPost.astro";
 import Heading from "../ui/Heading.astro";
 import { useTranslations } from '@/i18n/utils.ts';
+import { getCollection } from 'astro:content';
 
-// --- NEW I18N LOGIC ---
-// 1. Get the current language from the URL.
-const allLocales = ['en', 'fr', 'de', 'es'];
-const pathname = Astro.url.pathname;
-const firstSegment = pathname.split('/')[1];
-const locale = allLocales.includes(firstSegment) ? firstSegment : 'en';
-
+// 1. Use Astro's built-in locale for simplicity
+const locale = Astro.currentLocale ?? 'en';
 const t = useTranslations(locale);
 
-// Prop to determine whether to exclude the latest post or a specific post
+// Props to control the component's behavior
 export interface Props {
   excludeLatest?: boolean;
   currentPostUrl?: string;
@@ -21,105 +17,79 @@ export interface Props {
 
 const { excludeLatest = false, currentPostUrl = "", all = false } = Astro.props;
 
-// Define the shape of a post object
-interface BlogPost {
-  url: string;
-  file: string;
-  frontmatter: {
-    title: string;
-    pubDate: string;
-    tags: string[];
-    languages: string[];
-    image: {
-        url: string;
-        alt: string;
-    };
-  };
-}
-
-// 2. Fetch all blog posts from ALL language directories.
-const postImports = import.meta.glob<BlogPost>("../../pages/**/blog/posts/*.md", { eager: true });
-const allPostsGlob: BlogPost[] = Object.values(postImports);
-
-// 3. Filter for posts that match the current language.
-let postsToShow = allPostsGlob.filter((post: BlogPost) => {
-  if (!post || !post.file) {
-    return false;
-  }
-  if (locale === 'en') {
-    return !allLocales.some(lang => lang !== 'en' && post.file.includes(`/pages/${lang}/`));
-  }
-  return post.file.includes(`/pages/${locale}/`);
+// 2. Fetch all blog posts for the CURRENT language from the content collection
+const allPostsForLocale = await getCollection('blog', ({ id }) => {
+  return id.startsWith(locale + '/');
 });
 
-// 4. THE FIX: Add a defensive filter to remove any null/invalid entries.
-postsToShow = postsToShow.filter(post => post && post.url);
-
-// --- END OF NEW I18N LOGIC ---
-
-
-// Sort by date in descending order (newest first)
-postsToShow.sort((a, b) => {
-  const dateA = new Date(a.frontmatter.pubDate).getTime();
-  const dateB = new Date(b.frontmatter.pubDate).getTime();
-  return dateB - dateA;
+// 3. Filter out draft posts in production builds
+let postsToShow = allPostsForLocale.filter(post => {
+  return import.meta.env.PROD ? !post.data.draft : true;
 });
 
-// Filter posts according to props (this logic remains the same)
+// Sort posts by date (newest first)
+postsToShow.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+// 4. Your existing logic for excluding posts is preserved, but updated for the new data structure
 if (currentPostUrl) {
-  // Exclude current post if its URL is provided
+  // Exclude the current post if its URL is provided
   postsToShow = postsToShow.filter((post) => {
-    if (!post.url) return false;
-    const normalizedPostUrl = post.url.replace(/\/$/, "");
+    const slug = post.slug.split('/')[1]; // Get slug without the language prefix
+    const postURL = `/blog/posts/${slug}`;
+    const normalizedPostUrl = postURL.replace(/\/$/, "");
     const normalizedCurrentUrl = currentPostUrl.replace(/\/$/, "");
     return normalizedPostUrl !== normalizedCurrentUrl;
   });
 } else if (excludeLatest) {
-  // If no specific URL but want to exclude the latest
+  // Exclude the most recent post
   postsToShow = postsToShow.slice(1);
 }
 
-// Limit to 4 posts if all is false
+// Limit to 4 posts if 'all' prop is false
 if (!all) {
   postsToShow = postsToShow.slice(0, 4);
 }
+
+// Helper to create the correct URL prefix for the current language
+const langPrefix = locale === 'en' ? '' : '/' + locale;
 ---
 
 <section
   class="py-8 max-lg:px-4 max-md:px-8 max-sm:px-0 max-md:py-4 max-w-4xl mx-auto"
 >
-  {
-    all && (
-      <div class="flex gap-4 pb-6 items-center text-center justify-center">
-        <Heading text="All" textGradient="Posts" level={2} />
-      </div>
-    )
-  }
+  {all && (
+    <div class="flex gap-4 pb-6 items-center text-center justify-center">
+      {/* Note: I've updated these keys to be more specific for this page */}
+      <Heading text={t("blog.all_posts.heading")} textGradient={t("blog.all_posts.subheading")} level={2} />
+    </div>
+  )}
 
   <div class="flex flex-col gap-8 w-full mx-auto">
-    {
-      postsToShow.map((post) => (
+    {postsToShow.map((post) => {
+      {/* 5. Construct the final URL for the post, including the language prefix */}
+      const slug = post.slug.split('/')[1];
+      const postUrl = `${langPrefix}/blog/posts/${slug}`;
+      return (
         <BlogPost
-          url={post.url}
-          title={post.frontmatter.title}
-          date={post.frontmatter.pubDate}
-          tags={post.frontmatter.tags}
-          languages={post.frontmatter.languages}
-          image={post.frontmatter.image}
+          url={`/blog/posts/${post.slug}`}
+          title={post.data.title}
+          date={post.data.pubDate}
+          tags={post.data.tags}
+          languages={post.data.languages}
+          image={post.data.image}
         />
-      ))
-    }
+      );
+    })}
   </div>
-  {
-    !all && (
-      <div id="morePosts" class="w-full flex justify-center text-center my-12">
-        <a
-          href="/blog/posts/"
-          class="font-bold cursor-pointer text-mint-400 dark:text-mint-100 hover:text-mint-500 dark:hover:text-mint-300 transition-all"
-        >
-          View all posts...
-        </a>
-      </div>
-    )
-  }
+
+  {!all && postsToShow.length > 0 && (
+    <div id="morePosts" class="w-full flex justify-center text-center my-12">
+      <a
+        href={`${langPrefix}/blog/posts/`}
+        class="font-bold cursor-pointer text-mint-400 dark:text-mint-100 hover:text-mint-500 dark:hover:text-mint-300 transition-all"
+      >
+        {t("blog.view_all_posts")}
+      </a>
+    </div>
+  )}
 </section>

@@ -36,8 +36,26 @@
     "button": "Contact Me"
   },
   "blog": {
+    "page": {
+      "title": "The Blog | Youri Lamoureux's Journey of Reinvention",
+      "description": "My journey of reinvention in El Salvador. Follow along as I vibe code, learn Generative AI and share the wins and lessons of building in public.",
+      "ogAlt": "The blog of Youri Lamoureux, showing the title 'A Journey of Reinvention' over a dark, technical background with green accents."
+    },
     "categories": "Categories",
-    "technologies": "Technologies"
+    "technologies": "Technologies",
+    "view_all_posts": "View all posts...",
+    "all_posts": {
+      "heading": "All",
+      "subheading": "Posts"
+    },
+    "post": {
+      "author_photo_alt": "Photo of the blog's author",
+      "article_image_fallback_alt": "Article image",
+      "nav": {
+        "previous": "Previous Post",
+        "next": "Next Post"
+      }
+    }
   },
   "home": {
     "hero": {

@@ -3,20 +3,23 @@ import Layout from "../../layouts/Layout.astro";
 import Hero from "../../components/blog/Hero.astro";
 import Tags from "../../components/blog/Tags.astro";
 import ListPosts from "../../components/blog/ListPosts.astro";
-const pageTitle = "The Blog | Youri Lamoureux's Journey of Reinvention";
-const description = "y journey of reinvention in El Salvador. Follow along as I vibe code, learn Generative AI and share the wins and lessons of building in public.";
-const ogimage ={
-    url: "/images/blogimage.webp",
-    alt: "The blog of Youri Lamoureux, showing the title 'A Journey of Reinvention' over a dark, technical background with green accents."
+import { useTranslations } from '@/i18n/utils.ts';
+
+const locale = Astro.currentLocale;
+const t = useTranslations(locale);
+
+const pageTitle = t('blog.page.title');
+const description = t('blog.page.description');
+const ogimage = {
+  url: "/images/blogimage.webp",
+  alt: t('blog.page.ogAlt')
 };
 ---
 
-<Layout  pageTitle={pageTitle} description={description} ogimage={ogimage}>
-   
-    <Hero />
-    <Tags />
-    <div class="px-8 max-sm:px-4">
-        <ListPosts />
-    </div>
-
+<Layout pageTitle={pageTitle} description={description} ogimage={ogimage}>
+  <Hero />
+  <Tags />
+  <div class="px-8 max-sm:px-4">
+    <ListPosts />
+  </div>
 </Layout>

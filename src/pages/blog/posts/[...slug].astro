@@ -1,0 +1,25 @@
+---
+// src/pages/blog/posts/[...slug].astro
+
+// These two import lines are the key to fixing all the errors
+import { getCollection } from 'astro:content';
+import MarkdownPostLayout from '../../../layouts/MarkdownPostLayout.astro';
+
+// This function tells Astro to create a page for every blog post
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.slug }, // The URL will be based on the file's slug
+    props: { post }, // The post data is passed as a prop to the page
+  }));
+}
+
+// Get the specific post data for this page from the props
+const { post } = Astro.props;
+// Get the HTML content from the Markdown file
+const { Content } = await post.render();
+---
+
+<MarkdownPostLayout frontmatter={post.data}>
+  <Content />
+</MarkdownPostLayout>

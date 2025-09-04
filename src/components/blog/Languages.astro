@@ -1,19 +1,27 @@
 ---
-const allPosts = await Astro.glob("../../pages/blog/posts/*.md");
-const languages = [
-    ...new Set(allPosts.map((post) => post.frontmatter.languages).flat()),
-];
+import { getCollection } from 'astro:content';
 import Capsule from "../ui/Capsule.astro";
 
+const locale = Astro.currentLocale ?? 'en';
+
+// 1. Fetch posts for the current language from the new content collection
+const allPostsForLocale = await getCollection('blog', ({ id }) => id.startsWith(locale + '/'));
+
+// 2. Filter out any posts that are marked as drafts
+const publishedPosts = allPostsForLocale.filter(post => import.meta.env.PROD ? !post.data.draft : true);
+
+// 3. Get all unique languages from the new 'post.data' structure
+const languages = [
+    ...new Set(publishedPosts.map((post) => post.data.languages).flat()),
+];
+
+// Your existing variant logic is preserved
 const { variant = "default" } = Astro.props;
-
 const baseClasses = "flex flex-wrap";
-
 const variantClasses = {
     default: "gap-3 max-lg:gap-1",
     vertical: "gap-6 flex-col"
 } as const;
-
 const classes = `${baseClasses} ${variantClasses[variant as keyof typeof variantClasses] || variantClasses.default}`;
 ---
 
@@ -22,6 +30,3 @@ const classes = `${baseClasses} ${variantClasses[variant as keyof typeof variant
         <Capsule lang={language} linkEnabled={true} size="md" />
     ))}
 </div>
-
-
-
