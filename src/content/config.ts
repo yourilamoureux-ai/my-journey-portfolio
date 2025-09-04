@@ -1,17 +1,19 @@
 // src/content/config.ts
 import { defineCollection, z } from 'astro:content';
 
-// 1. Blog collection schema (no changes needed here)
+// 1. Blog collection schema
 const blogCollection = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
     author: z.string(),
     description: z.string(),
-    image: z.object({
+    image: z
+      .object({
         url: z.string(),
         alt: z.string(),
-      }).optional(),
+      })
+      .optional(),
     pubDate: z.date(),
     draft: z.boolean().optional(),
     tags: z.array(z.string()),
@@ -19,19 +21,21 @@ const blogCollection = defineCollection({
   }),
 });
 
-// 2. Static data schema (now cleaned up)
+// 2. Static data schema
 const staticDataCollection = defineCollection({
   type: 'data',
   schema: z.object({
-    // Site-wide settings and links that don't need translation
+    // Core contact info
     email: z.string().email(),
+
+    // Social links (all optional)
     x: z.string().url().optional(),
     instagram: z.string().url().optional(),
     linkedin: z.string().url().optional(),
     youtube: z.string().url().optional(),
     github: z.string().url().optional(),
 
-    // Icon names (these are tied to code, not language)
+    // Icon names (all optional)
     contactSectionButtonIcon: z.string(),
     instagramIconName: z.string().optional(),
     emailIconName: z.string().optional(),
@@ -39,10 +43,11 @@ const staticDataCollection = defineCollection({
     linkedinIconName: z.string().optional(),
     youtubeIconName: z.string().optional(),
     githubIconName: z.string().optional(),
-    
-    // Image paths
+
+    // Images
     fallbackImage: z.object({
       url: z.string(),
+      alt: z.string().optional(),
     }),
   }),
 });

@@ -3,18 +3,15 @@
   "x": "https://x.com/youri_lamoureux",
   "instagram": "https://www.instagram.com/youri.lamoureux",
   "github": "https://github.com/yourilamoureux-ai/my-journey-portfolio",
-  "linkedin": null,
-  "youtube": null,
 
   "contactSectionButtonIcon": "envelope",
   "xIconName": "x",
   "instagramIconName": "instagram",
   "githubIconName": "github",
-  "linkedinIconName": null,
-  "youtubeIconName": null,
   "emailIconName": "envelope",
-  
+
   "fallbackImage": {
-    "url": "/images/fallback.webp"
+    "url": "/images/fallback.webp",
+    "alt": "Generic fallback image used when no project or blog image is available."
   }
 }
