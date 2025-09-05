@@ -50,7 +50,7 @@ const baseClasses = {
   // Your existing script remains unchanged
 </script>
 
-<nav class={baseClasses.nav} role="navigation" aria-label={t('header.main_nav_aria_label')}>
+<nav id="mobile-menu" class={baseClasses.nav} role="navigation" aria-label={t('header.main_nav_aria_label')}>
   {
     items.map((key: string) => {
       const item = menu[key as keyof typeof menu];
