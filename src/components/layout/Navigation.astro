@@ -12,16 +12,21 @@ const locale = allLocales.includes(firstSegment) ? firstSegment : 'en';
 const t = useTranslations(locale);
 
 const [staticData] = await getCollection("staticData");
-// Fetch all social links that might appear in the mobile menu
-const { github, githubIconName, linkedin, linkedinIconName, instagram, instagramIconName, x, xIconName, email, emailIconName } = staticData.data;
+// Social links from your staticData
+const {
+  github, githubIconName,
+  linkedin, linkedinIconName,
+  instagram, instagramIconName,
+  x, xIconName,
+  email, emailIconName
+} = staticData.data;
 
 const { items = [] }: { items: (keyof typeof menu)[] } = Astro.props as {
   items: (keyof typeof menu)[];
 };
 
-// The menu object now only contains paths. The names are in our JSON files.
+// Menu definition
 const base = locale === "en" ? "" : `/${locale}`;
-
 const menu = {
   about: { path: `${base}/about-me` },
   blog: {
@@ -35,8 +40,7 @@ const menu = {
 
 // Common base classes
 const baseClasses = {
-  nav: "nav-links flex w-full justify-center gap-6 max-md:gap-3 max-md:py-6",
-  link: "px-2 py-2 transition-all hover:text-mint-300 max-md:mx-auto max-md:w-full max-md:px-6 max-md:py-2 ",
+  link: "px-2 py-2 transition-all hover:text-mint-300 max-md:mx-auto max-md:w-full max-md:px-6 max-md:py-2",
   socialContainer: "flex items-center justify-center gap-5 md:hidden",
   dropdown: "relative group flex items-center",
   dropdownMenu:
@@ -46,11 +50,14 @@ const baseClasses = {
 } as const;
 ---
 
-<script>
-  // Your existing script remains unchanged
-</script>
-
-<nav id="mobile-menu" class={baseClasses.nav} role="navigation" aria-label={t('header.main_nav_aria_label')}>
+<!-- 🚀 Navigation -->
+<nav
+  id="mobile-menu"
+  class="fixed inset-0 z-40 hidden flex-col items-center justify-center gap-6 bg-white dark:bg-zinc-900
+         md:static md:flex md:flex-row md:gap-6 md:bg-transparent"
+  role="navigation"
+  aria-label="Main Navigation"
+>
   {
     items.map((key: string) => {
       const item = menu[key as keyof typeof menu];
@@ -58,12 +65,23 @@ const baseClasses = {
       if ("dropdown" in item) {
         return (
           <div class={baseClasses.dropdown}>
-            <a href={item.path} class={baseClasses.link} data-path={item.path} aria-label={t(`nav.${key}`)} aria-current={item.path === Astro.url.pathname ? "page" : undefined}>
+            <a
+              href={item.path}
+              class={baseClasses.link}
+              data-path={item.path}
+              aria-label={t(`nav.${key}`)}
+              aria-current={item.path === Astro.url.pathname ? "page" : undefined}
+            >
               {t(`nav.${key}`)}
             </a>
             <div class={baseClasses.dropdownMenu}>
               {item.dropdown.map((dropdownItem) => (
-                <a href={dropdownItem.path} class={baseClasses.dropdownItem} data-path={dropdownItem.path} aria-label={t(`nav.${dropdownItem.key}`)}>
+                <a
+                  href={dropdownItem.path}
+                  class={baseClasses.dropdownItem}
+                  data-path={dropdownItem.path}
+                  aria-label={t(`nav.${dropdownItem.key}`)}
+                >
                   {t(`nav.${dropdownItem.key}`)}
                 </a>
               ))}
@@ -72,13 +90,20 @@ const baseClasses = {
         );
       }
       return (
-        <a href={item.path} class={baseClasses.link} data-path={item.path} aria-label={t(`nav.${key}`)} aria-current={item.path === Astro.url.pathname ? "page" : undefined}>
+        <a
+          href={item.path}
+          class={baseClasses.link}
+          data-path={item.path}
+          aria-label={t(`nav.${key}`)}
+          aria-current={item.path === Astro.url.pathname ? "page" : undefined}
+        >
           {t(`nav.${key}`)}
         </a>
       );
     })
   }
 
+  <!-- Social links (mobile only) -->
   <div
     class={baseClasses.socialContainer}
     role="group"

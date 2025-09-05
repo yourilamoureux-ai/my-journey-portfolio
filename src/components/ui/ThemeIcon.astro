@@ -37,7 +37,7 @@ import { Icon } from "astro-icon/components";
             if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
                 return "dark";
             }
-            return "light";
+            return "dark"; // Changed to dark
         })();
 
         if (theme === "light") {
